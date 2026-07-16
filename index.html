@@ -33,11 +33,6 @@
   .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; position: relative; z-index: 2; }
   .hero-trust-spacer { height: 64px; flex: 0 0 auto; }
   .hero-kicker, .hero-title, .hero-lede { position: relative; z-index: 2; }
-  .benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
-  .benefit-card { background: #FFFFFF; border-radius: 24px; padding: 34px; }
-  .benefit-card span { display: block; margin-bottom: 14px; color: #0B63E5; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; }
-  .benefit-card h3 { margin: 0 0 12px; font-size: 21px; line-height: 1.22; letter-spacing: -0.015em; }
-  .benefit-card p { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(29,29,31,0.74); }
   .services-grid { grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
   .service-card { border-radius: 26px; padding: 36px; background: #F5F7FA; }
   .service-primary { grid-row: 1 / 3; padding: 44px; background: #EAF1FC; display: flex; flex-direction: column; justify-content: space-between; }
@@ -85,12 +80,11 @@
   [data-fx] { opacity: 0; transform: translate3d(0, 34px, 0) scale(0.985); transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.85s cubic-bezier(0.22, 0.61, 0.36, 1); transition-delay: var(--fx-delay, 0ms); will-change: opacity, transform; }
   [data-fx="heading"] { transform: translate3d(0, 28px, 0) scale(0.97); filter: blur(4px); }
   [data-fx].is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
-  .benefit-card, .service-card, .potential-step, .use-case-card, .about-fact { position: relative; }
-  .benefit-card:not([data-fx]), .service-card:not([data-fx]), .potential-step:not([data-fx]), .use-case-card:not([data-fx]), .about-fact:not([data-fx]) { transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s ease; }
-  .benefit-card[data-fx], .service-card[data-fx], .potential-step[data-fx], .use-case-card[data-fx], .about-fact[data-fx] { transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease; transition-delay: var(--fx-delay, 0ms); }
+  .service-card, .potential-step, .use-case-card, .about-fact { position: relative; }
+  .service-card:not([data-fx]), .potential-step:not([data-fx]), .use-case-card:not([data-fx]), .about-fact:not([data-fx]) { transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s ease; }
+  .service-card[data-fx], .potential-step[data-fx], .use-case-card[data-fx], .about-fact[data-fx] { transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease; transition-delay: var(--fx-delay, 0ms); }
   .hero-actions a, #potenzialcheck > div > a { transition: background 0.2s ease, color 0.2s ease, transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s ease !important; }
   @media (hover: hover) and (pointer: fine) {
-    [data-fx].is-visible.benefit-card:hover,
     [data-fx].is-visible.service-card:hover,
     [data-fx].is-visible.potential-step:hover,
     [data-fx].is-visible.use-case-card:hover,
@@ -131,7 +125,7 @@
     .hero-lede { order: 4; }
     .hero-actions { order: 5; }
     .hero-trust-spacer { order: 6; height: 24px; }
-    .benefit-grid, .services-grid, .potential-grid, .about-facts { grid-template-columns: minmax(0, 1fr) !important; }
+    .services-grid, .potential-grid, .about-facts { grid-template-columns: minmax(0, 1fr) !important; }
     .services-grid { grid-template-rows: auto; }
     .service-primary { grid-row: auto; padding: 36px; }
     .use-case-grid { grid-template-columns: minmax(0, 1fr); }
@@ -153,7 +147,7 @@
     .hero-actions a { width: 100%; min-height: 50px; justify-content: center; }
     .hero-lede { margin-bottom: 24px !important; padding: 10px 12px; border-radius: 18px; background: #FFFFFF; }
     .hero-trust-spacer { height: 24px; }
-    .benefit-card, .service-card, .service-primary, .potential-step, .use-case-card { padding: 28px; }
+    .service-card, .service-primary, .potential-step, .use-case-card { padding: 28px; }
     .about-copy > p { font-size: 17px; }
     .contact-panel { padding: 24px !important; }
     .contact-row { gap: 14px !important; padding-right: 18px !important; padding-left: 18px !important; }
@@ -168,7 +162,6 @@
     }
     [data-fx] { will-change: auto; }
     [data-fx="heading"] { filter: none !important; transform: translate3d(0, 20px, 0) scale(0.985); }
-    .benefit-card[data-fx],
     .service-card[data-fx],
     .potential-step[data-fx],
     .use-case-card[data-fx],
@@ -237,33 +230,6 @@
     </div>
   </section>
 
-  <!-- Nutzen -->
-  <section style="background: #F5F7FA">
-    <div class="section-shell">
-      <div class="section-intro">
-        <h2>Von der ersten Idee zum belastbaren Einsatz.</h2>
-        <p>Wir verbinden fachliche Analyse, technische Umsetzung und die Einführung im Unternehmen. So entsteht ein klarer Weg von der Aufgabenstellung bis zum produktiven Workflow.</p>
-      </div>
-      <div class="benefit-grid responsive-grid" style="display: grid">
-        <div class="benefit-card">
-          <span>01 · ORIENTIERUNG</span>
-          <h3>Die richtigen Anwendungsfälle auswählen</h3>
-          <p>Wir bewerten Aufgaben nach Nutzen, Aufwand, Datenlage und betrieblichen Anforderungen.</p>
-        </div>
-        <div class="benefit-card">
-          <span>02 · STRUKTUR</span>
-          <h3>Verantwortlichkeiten und Zugriffe klären</h3>
-          <p>Rollen, Berechtigungen und interne Regeln werden von Beginn an nachvollziehbar aufgebaut.</p>
-        </div>
-        <div class="benefit-card">
-          <span>03 · UMSETZUNG</span>
-          <h3>Im Arbeitsalltag wirksam werden</h3>
-          <p>Wir konfigurieren Lösungen, entwickeln Workflows und begleiten Mitarbeitende bei der Einführung.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Leistungen -->
   <section id="ki-consulting" style="background: #FFFFFF">
     <div class="section-shell">
@@ -313,17 +279,17 @@
       <p style="margin: 0; max-width: 700px; font-size: 17px; line-height: 1.65; color: rgba(245,247,250,0.74); text-wrap: pretty">Der Potenzialcheck schafft eine fundierte Entscheidungsgrundlage, bevor Zeit und Budget in einzelne Werkzeuge oder Projekte fließen.</p>
       <div class="potential-grid responsive-grid" style="display: grid">
         <div class="potential-step">
-          <span>01 · AUSGANGSLAGE</span>
+          <span>AUSGANGSLAGE</span>
           <h3>Aufgaben und Rahmenbedingungen klären</h3>
           <p>Wir wählen relevante Prozesse aus und erfassen Ziele, Datenquellen und beteiligte Rollen.</p>
         </div>
         <div class="potential-step">
-          <span>02 · BEWERTUNG</span>
+          <span>BEWERTUNG</span>
           <h3>Nutzen und Umsetzbarkeit bewerten</h3>
           <p>Anwendungsfälle werden nach Nutzen, Aufwand, Datenlage und Risiken eingeordnet.</p>
         </div>
         <div class="potential-step">
-          <span>03 · ERGEBNIS</span>
+          <span>ERGEBNIS</span>
           <h3>Nächste Schritte priorisieren</h3>
           <p>Sie erhalten priorisierte Anwendungsfälle und eine Empfehlung für das weitere Vorgehen.</p>
         </div>
@@ -664,7 +630,7 @@
         prep(el, 0, 'heading');
       });
 
-      document.querySelectorAll('.benefit-grid, .services-grid, .potential-grid, .use-case-grid, .about-facts').forEach(function (group) {
+      document.querySelectorAll('.services-grid, .potential-grid, .use-case-grid, .about-facts').forEach(function (group) {
         [].slice.call(group.children).forEach(function (card, i) {
           prep(card, Math.min(i, 6) * 110, 'card');
         });
