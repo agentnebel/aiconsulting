@@ -28,6 +28,8 @@ var CONFIG = {
 };
 ```
 
-Werte eintragen — die Platzhalter werden dann automatisch überall (inkl. `mailto:`- und `tel:`-Links) ersetzt. Leere Felder lassen den sichtbaren Platzhalter stehen.
+Werte eintragen — die Platzhalter werden dann automatisch überall (inkl. Seitentitel, `mailto:`- und `tel:`-Links) ersetzt. Links mit leeren Feldern werden deaktiviert, damit sie nicht versehentlich als kaputte Kontaktwege veröffentlicht werden.
 
 `impressum.html` und `datenschutz.html` enthalten bewusst keine erfundenen rechtlichen Angaben und werden vor Veröffentlichung juristisch geprüft ergänzt.
+
+GitHub Pages oder ein anderes öffentliches Hosting darf erst aktiviert werden, wenn alle fünf `CONFIG`-Werte sowie Impressum, Datenschutzerklärung und der Abschnitt zu Personen und Qualifikationen vollständig ausgefüllt sind.

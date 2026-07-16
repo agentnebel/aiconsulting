@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KI-Consulting für KMU | [Unternehmensname]</title>
-<meta name="description" content="Wir unterstützen kleine und mittlere Unternehmen bei Auswahl, Einführung und Betrieb passender KI-Lösungen. Persönlich in Limburg-Weilburg und remote in Deutschland.">
+<title>KI-Beratung und Umsetzung für KMU | [Unternehmensname]</title>
+<meta name="description" content="Beratung und Umsetzung für kleine und mittlere Unternehmen: KI-Strategie, Einführung, Workflows und Automatisierung in Limburg-Weilburg und deutschlandweit.">
 <!--
   Vor Veröffentlichung ausfüllen: die Platzhalter unten im CONFIG-Objekt (Firmenname,
   E-Mail, Telefon, Adresse, LinkedIn). Werte, die leer bleiben, zeigen weiterhin den
@@ -25,6 +25,80 @@
   .nav-toggle { display: none; }
   .mobile-menu { display: none; }
   .mobile-menu.open { display: flex; }
+  a[aria-disabled="true"] { color: rgba(29,29,31,0.45) !important; cursor: not-allowed; pointer-events: none; }
+  .section-shell { max-width: 1100px; margin: 0 auto; padding: 96px 22px; }
+  .section-intro { max-width: 720px; margin: 0 auto; text-align: center; }
+  .section-intro h2 { margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; }
+  .section-intro p { margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.74); text-wrap: pretty; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; position: relative; z-index: 2; }
+  .hero-trust-spacer { height: 64px; flex: 0 0 auto; }
+  .hero-kicker, .hero-title, .hero-lede { position: relative; z-index: 2; }
+  .benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
+  .benefit-card { background: #FFFFFF; border-radius: 24px; padding: 34px; }
+  .benefit-card span { display: block; margin-bottom: 14px; color: #0B63E5; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; }
+  .benefit-card h3 { margin: 0 0 12px; font-size: 21px; line-height: 1.22; letter-spacing: -0.015em; }
+  .benefit-card p { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(29,29,31,0.74); }
+  .services-grid { grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
+  .service-card { border-radius: 26px; padding: 36px; background: #F5F7FA; }
+  .service-primary { grid-row: 1 / 3; padding: 44px; background: #EAF1FC; display: flex; flex-direction: column; justify-content: space-between; }
+  .service-kicker { margin: 0 0 12px; color: #0B63E5; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+  .service-card h3 { margin: 0 0 14px; font-size: clamp(23px, 2.6vw, 34px); line-height: 1.12; letter-spacing: -0.025em; }
+  .service-card p { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(29,29,31,0.74); }
+  .service-card ul { margin: 28px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .service-card li { position: relative; padding-left: 22px; font-size: 16px; line-height: 1.5; color: rgba(29,29,31,0.78); }
+  .service-card li::before { content: '✓'; position: absolute; left: 0; color: #0B63E5; font-weight: 700; }
+  .visual-story { position: relative; min-height: 520px; margin: 18px 0 0; overflow: hidden; border-radius: 30px; background: #EEF1F5; isolation: isolate; }
+  .visual-story::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, transparent 32%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.94) 82%); pointer-events: none; }
+  .visual-story img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.06); transition: transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .visual-story.is-visible img { transform: scale(1); }
+  .visual-story figcaption { position: absolute; top: 50%; right: clamp(34px, 6vw, 78px); z-index: 2; width: min(36%, 360px); transform: translateY(-50%); }
+  .visual-story figcaption span { display: block; margin-bottom: 14px; color: #0B63E5; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+  .visual-story figcaption strong { display: block; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em; text-wrap: balance; }
+  .potential-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 44px 0 28px; width: 100%; }
+  .potential-step { background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.13); border-radius: 20px; padding: 28px; text-align: left; }
+  .potential-step span { display: block; margin-bottom: 12px; color: #5A9BF6; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; }
+  .potential-step h3 { margin: 0 0 10px; color: #F5F7FA; font-size: 19px; line-height: 1.25; }
+  .potential-step p { margin: 0; color: rgba(245,247,250,0.72); font-size: 15.5px; line-height: 1.55; }
+  .use-case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 48px; }
+  .use-case-card { min-width: 0; min-height: 300px; overflow: hidden; border-radius: 26px; padding: 34px; background: #F5F7FA; display: flex; flex-direction: column; justify-content: flex-end; }
+  .use-case-card:first-child { grid-column: 1 / -1; min-height: 500px; align-items: flex-end; background: #0D1117; color: #F5F7FA; isolation: isolate; }
+  .use-case-card:first-child::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(6,12,24,0.05) 20%, rgba(6,12,24,0.4) 52%, rgba(6,12,24,0.96) 86%); }
+  .use-case-card > span { margin-bottom: auto; color: #0B63E5; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; }
+  .use-case-card:first-child span { color: #5A9BF6; }
+  .use-case-card h3 { max-width: 100%; margin: 24px 0 10px; font-size: clamp(21px, 2.1vw, 27px); line-height: 1.16; letter-spacing: -0.02em; overflow-wrap: anywhere; hyphens: auto; }
+  .use-case-card p { margin: 0; font-size: 16px; line-height: 1.55; color: rgba(29,29,31,0.72); }
+  .use-case-card:first-child p { color: rgba(245,247,250,0.72); }
+  .use-case-image { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.07); transition: transform 1.4s cubic-bezier(0.22, 0.61, 0.36, 1); }
+  .use-case-card.is-visible .use-case-image { transform: scale(1); }
+  .use-case-feature-content { width: min(42%, 410px); }
+  .use-case-feature-content span { display: block; margin-bottom: 20px; color: #5A9BF6; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; }
+  .use-case-feature-content h3 { margin-top: 0; color: #FFFFFF; font-size: clamp(28px, 3.3vw, 44px); }
+  .about-copy { max-width: 760px; margin: 0 auto; }
+  .about-copy h2 { margin: 0 0 22px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; }
+  .about-copy > p { margin: 0 0 16px; font-size: 18px; line-height: 1.65; color: rgba(29,29,31,0.74); text-wrap: pretty; }
+  .about-facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 36px; }
+  .about-fact { border: 1px solid rgba(29,29,31,0.08); border-radius: 20px; padding: 24px; background: #FFFFFF; }
+  .about-fact strong { display: block; margin-bottom: 7px; font-size: 16px; }
+  .about-fact span { font-size: 14.5px; line-height: 1.5; color: rgba(29,29,31,0.66); }
+
+  /* Ruhige, scrollbasierte Bewegung mit klarer Hierarchie. */
+  [data-fx] { opacity: 0; transform: translate3d(0, 34px, 0) scale(0.985); transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.85s cubic-bezier(0.22, 0.61, 0.36, 1); transition-delay: var(--fx-delay, 0ms); will-change: opacity, transform; }
+  [data-fx="heading"] { transform: translate3d(0, 28px, 0) scale(0.97); filter: blur(4px); }
+  [data-fx].is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); }
+  .benefit-card, .service-card, .potential-step, .use-case-card, .about-fact { position: relative; }
+  .benefit-card:not([data-fx]), .service-card:not([data-fx]), .potential-step:not([data-fx]), .use-case-card:not([data-fx]), .about-fact:not([data-fx]) { transition: transform 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 0.61, 0.36, 1), border-color 0.45s ease; }
+  .benefit-card[data-fx], .service-card[data-fx], .potential-step[data-fx], .use-case-card[data-fx], .about-fact[data-fx] { transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), filter 0.85s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.45s ease, border-color 0.45s ease; transition-delay: var(--fx-delay, 0ms); }
+  .hero-actions a, #potenzialcheck > div > a { transition: background 0.2s ease, color 0.2s ease, transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.4s ease !important; }
+  @media (hover: hover) and (pointer: fine) {
+    [data-fx].is-visible.benefit-card:hover,
+    [data-fx].is-visible.service-card:hover,
+    [data-fx].is-visible.potential-step:hover,
+    [data-fx].is-visible.use-case-card:hover,
+    [data-fx].is-visible.about-fact:hover { transform: translate3d(0, -7px, 0) scale(1.012); box-shadow: 0 22px 55px rgba(29,29,31,0.11); }
+    [data-fx].is-visible.potential-step:hover { border-color: rgba(90,155,246,0.5); box-shadow: 0 22px 55px rgba(0,0,0,0.28); }
+    .hero-actions a:hover, #potenzialcheck > div > a:hover { transform: translateY(-2px) scale(1.015); box-shadow: 0 12px 30px rgba(11,99,229,0.2); }
+    .visual-story.is-visible:hover img, .use-case-card.is-visible:hover .use-case-image { transform: scale(1.025); }
+  }
   @media (max-width: 1080px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: flex; }
@@ -33,10 +107,41 @@
     .nav-toggle { display: none !important; }
     .mobile-menu.open { display: none; }
   }
+  @media (max-width: 800px) {
+    .section-shell { padding: 76px 22px; }
+    .benefit-grid, .services-grid, .potential-grid, .about-facts { grid-template-columns: minmax(0, 1fr) !important; }
+    .services-grid { grid-template-rows: auto; }
+    .service-primary { grid-row: auto; padding: 36px; }
+    .use-case-grid { grid-template-columns: minmax(0, 1fr); }
+    .use-case-card { min-height: 250px; }
+    .use-case-card:first-child { grid-column: auto; min-height: 460px; align-items: flex-start; }
+    .use-case-card:first-child::after { background: linear-gradient(180deg, rgba(6,12,24,0.05) 16%, rgba(6,12,24,0.94) 86%); }
+    .use-case-image { object-position: 42% center; }
+    .use-case-feature-content { width: 100%; margin-top: auto; }
+    .visual-story { min-height: 460px; }
+    .visual-story::after { background: linear-gradient(180deg, rgba(255,255,255,0.04) 24%, rgba(255,255,255,0.96) 82%); }
+    .visual-story img { object-position: 38% center; }
+    .visual-story figcaption { top: auto; right: 28px; bottom: 30px; left: 28px; width: auto; transform: none; }
+  }
+  @media (max-width: 480px) {
+    .responsive-grid { grid-template-columns: minmax(0, 1fr) !important; }
+    .hero-content { padding-top: 78px !important; }
+    .hero-actions { width: min(100%, 310px); flex-direction: column; gap: 10px; padding: 10px; border-radius: 28px; background: #FFFFFF; }
+    .hero-actions a { width: 100%; min-height: 50px; justify-content: center; }
+    .hero-lede { margin-bottom: 24px !important; padding: 10px 12px; border-radius: 18px; background: #FFFFFF; }
+    .hero-trust-spacer { height: 95px; }
+    .benefit-card, .service-card, .service-primary, .potential-step, .use-case-card { padding: 28px; }
+    .about-copy > p { font-size: 17px; }
+  }
+
+  @media print {
+    [data-fx] { opacity: 1 !important; transform: none !important; filter: none !important; }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
+    [data-fx] { opacity: 1 !important; transform: none !important; filter: none !important; }
   }
 </style>
 </head>
@@ -48,9 +153,9 @@
     <nav class="nav-desktop" aria-label="Hauptnavigation">
       <a href="#start" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Start</a>
       <a href="#ki-consulting" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Leistungen</a>
-      <a href="#digitale-loesungen" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Digitale Lösungen</a>
+      <a href="#potenzialcheck" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Potenzialcheck</a>
       <a href="#ueber-uns" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Über uns</a>
-      <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #0A54C2; color: #FFFFFF">Kontakt</a>
+      <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #0A54C2; color: #FFFFFF">Erstgespräch</a>
     </nav>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen oder schließen" style="flex-direction: column; gap: 5px; background: none; border: none; border-radius: 10px; padding: 12px 10px; cursor: pointer">
       <span style="display: block; width: 20px; height: 1.5px; background: #1D1D1F"></span>
@@ -60,9 +165,9 @@
   <nav class="mobile-menu" id="mobile-menu" aria-label="Mobiles Menü" style="flex-direction: column; gap: 2px; padding: 10px 24px 24px; border-top: 1px solid rgba(29,29,31,0.08); background: rgba(255,255,255,0.98)">
     <a href="#start" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Start</a>
     <a href="#ki-consulting" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Leistungen</a>
-    <a href="#digitale-loesungen" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Digitale Lösungen</a>
+    <a href="#potenzialcheck" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Potenzialcheck</a>
     <a href="#ueber-uns" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Über uns</a>
-    <a href="#kontakt" data-close-menu style="display: inline-flex; justify-content: center; background: #0B63E5; color: #FFFFFF; font-size: 16px; font-weight: 500; padding: 14px 22px; border-radius: 980px; margin-top: 12px">Kontakt</a>
+    <a href="#kontakt" data-close-menu style="display: inline-flex; justify-content: center; background: #0B63E5; color: #FFFFFF; font-size: 16px; font-weight: 500; padding: 14px 22px; border-radius: 980px; margin-top: 12px">Erstgespräch anfragen</a>
   </nav>
 </header>
 
@@ -70,39 +175,41 @@
   <!-- Hero -->
   <section id="start" style="position: relative; overflow: hidden; background: #FFFFFF">
     <canvas id="hero-canvas" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none"></canvas>
-    <div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 118px 22px 130px; display: flex; flex-direction: column; align-items: center; text-align: center">
-      <p style="margin: 0 0 18px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">KI-CONSULTING FÜR KLEINE UND MITTLERE UNTERNEHMEN</p>
-      <h1 style="margin: 0 0 22px; max-width: 900px; font-size: clamp(44px, 6.4vw, 84px); line-height: 1.03; letter-spacing: -0.035em; font-weight: 700">KI, die in Ihrem Unternehmen wirklich funktioniert.</h1>
-      <p style="margin: 0 0 34px; max-width: 660px; font-size: clamp(18px, 2vw, 21px); line-height: 1.5; font-weight: 400; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir unterstützen kleine und mittlere Unternehmen dabei, passende KI-Lösungen auszuwählen, sicher einzuführen und dauerhaft nutzbar zu machen. Mit klaren Regeln, praxistauglichen Workflows und persönlicher Begleitung.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center">
-        <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 17px; font-weight: 500; padding: 15px 30px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #0A54C2; color: #FFFFFF">Kontakt aufnehmen</a>
+    <div class="hero-content" style="position: relative; max-width: 1100px; margin: 0 auto; padding: 118px 22px 130px; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <p class="hero-kicker" style="margin: 0 0 18px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">KI-BERATUNG UND UMSETZUNG FÜR IHR BUSINESS</p>
+      <h1 class="hero-title" style="margin: 0 0 22px; max-width: 900px; font-size: clamp(44px, 6.4vw, 84px); line-height: 1.03; letter-spacing: -0.035em; font-weight: 700">KI-Lösungen, die zu Ihren Prozessen passen.</h1>
+      <p class="hero-lede" style="margin: 0 0 34px; max-width: 660px; font-size: clamp(18px, 2vw, 21px); line-height: 1.5; font-weight: 400; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir unterstützen kleine und mittlere Unternehmen dabei, geeignete KI-Lösungen auszuwählen, strukturiert einzuführen und sinnvoll in bestehende Abläufe zu integrieren. Von der ersten Analyse bis zum produktiven Einsatz.</p>
+      <div class="hero-actions">
+        <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 17px; font-weight: 500; padding: 15px 30px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #0A54C2; color: #FFFFFF">Erstgespräch anfragen</a>
         <a href="#ki-consulting" style="display: inline-flex; align-items: center; gap: 4px; color: #0B63E5; font-size: 17px; font-weight: 400" style-hover="color: #0A54C2">Leistungen ansehen <span aria-hidden="true" style="font-size: 19px">›</span></a>
       </div>
-      <p style="margin: 30px 0 0; font-size: 14px; color: rgba(29,29,31,0.55)">Plattformunabhängig&nbsp;·&nbsp;Datenschutzbewusst&nbsp;·&nbsp;Verständlich umgesetzt</p>
-      <div aria-hidden="true" style="height: 260px"></div>
+      <div class="hero-trust-spacer" aria-hidden="true"></div>
+      <div class="hero-visual-space" aria-hidden="true" style="height: 260px"></div>
     </div>
   </section>
 
-  <!-- Ausgangslage -->
+  <!-- Nutzen -->
   <section style="background: #F5F7FA">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
-      <div style="max-width: 740px; margin: 0 auto; text-align: center">
-        <h2 style="margin: 0 0 22px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700">KI ist schnell verfügbar. Damit ist sie noch nicht sinnvoll eingeführt.</h2>
-        <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Viele Unternehmen testen bereits einzelne KI-Tools. Häufig fehlen jedoch klare Zuständigkeiten, abgestimmte Regeln und ein gemeinsames Verständnis dafür, welche Daten verarbeitet werden dürfen. Gleichzeitig bleibt unklar, welche Anwendungen im Arbeitsalltag wirklich helfen.</p>
-        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir schaffen Struktur. Gemeinsam prüfen wir Aufgaben, Daten und bestehende Abläufe. Daraus entwickeln wir eine Lösung, die zum Unternehmen und zu den Mitarbeitenden passt.</p>
+    <div class="section-shell">
+      <div class="section-intro">
+        <h2>Von der ersten Idee zum belastbaren Einsatz.</h2>
+        <p>Wir verbinden fachliche Analyse, technische Umsetzung und die Einführung im Unternehmen. So entsteht ein klarer Weg von der Aufgabenstellung bis zum produktiven Workflow.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 56px">
-        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
-          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Klare Auswahl statt Tool-Chaos</h3>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir prüfen, welche Plattformen und Modelle zu den tatsächlichen Aufgaben passen. Dabei berücksichtigen wir Kosten, Bedienbarkeit, Datenschutz und den späteren Betrieb.</p>
+      <div class="benefit-grid responsive-grid" style="display: grid">
+        <div class="benefit-card">
+          <span>01 · ORIENTIERUNG</span>
+          <h3>Die richtigen Anwendungsfälle auswählen</h3>
+          <p>Wir bewerten Aufgaben nach Nutzen, Aufwand, Datenlage und betrieblichen Anforderungen.</p>
         </div>
-        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
-          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Verantwortbare Nutzung</h3>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir strukturieren Rollen, Zugriffe und interne Regeln. Eine rechtliche Beratung ersetzen wir nicht. Wir schaffen jedoch eine belastbare Grundlage für die technische und organisatorische Einführung.</p>
+        <div class="benefit-card">
+          <span>02 · STRUKTUR</span>
+          <h3>Verantwortlichkeiten und Zugriffe klären</h3>
+          <p>Rollen, Berechtigungen und interne Regeln werden von Beginn an nachvollziehbar aufgebaut.</p>
         </div>
-        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
-          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Umsetzung statt Konzeptpapier</h3>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir richten Lösungen ein, entwickeln erste Workflows und begleiten die Mitarbeitenden beim Start. Anpassungen entstehen aus der praktischen Nutzung.</p>
+        <div class="benefit-card">
+          <span>03 · UMSETZUNG</span>
+          <h3>Im Arbeitsalltag wirksam werden</h3>
+          <p>Wir konfigurieren Lösungen, entwickeln Workflows und begleiten Mitarbeitende bei der Einführung.</p>
         </div>
       </div>
     </div>
@@ -110,131 +217,98 @@
 
   <!-- Leistungen -->
   <section id="ki-consulting" style="background: #FFFFFF">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
-      <div style="max-width: 700px; margin: 0 auto; text-align: center">
-        <h2 style="margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.03em; font-weight: 700">Unsere Leistungen</h2>
-        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.72)">Wir beginnen nicht bei einem bestimmten Tool. Wir beginnen bei der Aufgabe, die gelöst werden soll.</p>
+    <div class="section-shell">
+      <div class="section-intro">
+        <h2>Unsere Leistungen</h2>
+        <p>Ausgangspunkt sind Ihre Prozesse, Anforderungen und Ziele. Die Technologie folgt der Aufgabe, nicht umgekehrt.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 56px">
-        <div style="background: #F5F7FA; border-radius: 24px; padding: 38px 34px">
-          <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">01</p>
-          <h3 style="margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">KI-Strategie und Potenzialcheck</h3>
-          <p style="margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir analysieren wiederkehrende Aufgaben und identifizieren sinnvolle Einsatzmöglichkeiten. Sie erhalten eine priorisierte Auswahl möglicher Anwendungsfälle und eine realistische Empfehlung für die nächsten Schritte.</p>
-          <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(29,29,31,0.7)">
-            <li>Prozesse und Anforderungen erfassen</li>
-            <li>Anwendungsfälle bewerten</li>
-            <li>Plattformen und Modelle vergleichen</li>
-            <li>Risiken und Verantwortlichkeiten klären</li>
-            <li>konkrete nächste Schritte festlegen</li>
-          </ul>
-        </div>
-        <div style="background: #F5F7FA; border-radius: 24px; padding: 38px 34px">
-          <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">02</p>
-          <h3 style="margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">KI-Einführung und laufender Betrieb</h3>
-          <p style="margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir richten geeignete KI-Plattformen ein und begleiten die Einführung im Unternehmen. Dabei kümmern wir uns um Rollen, Zugriffe, Nutzerverwaltung und die Weiterentwicklung der Konfiguration.</p>
-          <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(29,29,31,0.7)">
-            <li>technische Einrichtung</li>
-            <li>Rollen und Berechtigungen</li>
-            <li>Nutzer- und Lizenzverwaltung</li>
-            <li>Einführung, Schulungen und Workshops für Mitarbeitende</li>
-            <li>laufende Unterstützung</li>
-          </ul>
-        </div>
-        <div style="background: #F5F7FA; border-radius: 24px; padding: 38px 34px">
-          <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">03</p>
-          <h3 style="margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">KI-Workflows und digitale Werkzeuge</h3>
-          <p style="margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir entwickeln praktische Hilfsmittel für konkrete Arbeitsabläufe. Das können wiederverwendbare Vorlagen, Assistants, Wissensstrukturen, Automatisierungen oder kleine interne Anwendungen sein. Über Connectoren binden wir KI an bestehende Systeme an, zum Beispiel Microsoft 365 oder Google Workspace.</p>
-          <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(29,29,31,0.7)">
-            <li>Recherche und Zusammenfassungen</li>
-            <li>Text- und Dokumentenarbeit</li>
-            <li>interne Wissensabfragen</li>
-            <li>Anbindung an Microsoft 365, Google Workspace und weitere Systeme</li>
-            <li>wiederkehrende Büroprozesse</li>
-            <li>kleine Webanwendungen und Tools</li>
-          </ul>
-        </div>
-      </div>
-      <div id="digitale-loesungen" style="margin-top: 18px; background: #0B63E5; border-radius: 24px; padding: 44px 40px; color: #FFFFFF">
-        <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.85)">04</p>
-        <h3 style="margin: 0 0 14px; font-size: 26px; font-weight: 700; letter-spacing: -0.02em">Webdesign und lokale Anwendungen</h3>
-        <p style="margin: 0 0 32px; max-width: 720px; font-size: 16.5px; line-height: 1.6; color: rgba(255,255,255,0.85); text-wrap: pretty">Neben KI gestalten und bauen wir Ihre digitale Basis: professionelle Websites und maßgeschneiderte, lokal laufende Anwendungen, die konkrete Aufgaben in Ihrem Betrieb erledigen.</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
-          <div style="background: rgba(255,255,255,0.1); border-radius: 18px; padding: 28px">
-            <h4 style="margin: 0 0 14px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Webdesign</h4>
-            <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 9px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9)">
-              <li>One-Pager und kompakte Unternehmenswebsites</li>
-              <li>responsive, moderne Umsetzung</li>
-              <li>technische Einrichtung und Hosting</li>
-              <li>Pflege und laufende Änderungen</li>
-            </ul>
+      <div class="services-grid" style="display: grid">
+        <div class="service-card service-primary">
+          <div>
+            <p class="service-kicker">01 · STRATEGIE</p>
+            <h3>Potenziale erkennen und Entscheidungen vorbereiten</h3>
+            <p>Wir analysieren wiederkehrende Aufgaben, vergleichen geeignete Lösungswege und übersetzen die Ergebnisse in eine belastbare Priorisierung.</p>
           </div>
-          <div style="background: rgba(255,255,255,0.1); border-radius: 18px; padding: 28px">
-            <h4 style="margin: 0 0 14px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Lokale produktive Apps</h4>
-            <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 9px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9)">
-              <li>maßgeschneiderte Tools für Ihre Abläufe</li>
-              <li>laufen lokal, ohne Cloud-Zwang</li>
-              <li>Daten bleiben im Unternehmen</li>
-            </ul>
-          </div>
+          <ul>
+            <li>Priorisierte Anwendungsfälle</li>
+            <li>Vergleich geeigneter Plattformen und Modelle</li>
+            <li>Empfehlung für die nächsten Schritte</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <p class="service-kicker">02 · EINFÜHRUNG</p>
+          <h3>Plattformen strukturiert einführen</h3>
+          <p>Wir richten Rollen, Zugriffe und Konfiguration ein und begleiten Mitarbeitende mit praxisnahen Schulungen.</p>
+        </div>
+        <div class="service-card">
+          <p class="service-kicker">03 · WORKFLOWS</p>
+          <h3>Wiederkehrende Arbeit vereinfachen</h3>
+          <p>Wir entwickeln Assistants, Wissenszugänge und Automatisierungen und binden bestehende Systeme an.</p>
         </div>
       </div>
+      <figure class="visual-story">
+        <img src="assets/images/ai-consulting-workshop.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Vier Fachleute analysieren gemeinsam Prozesse und planen die nächsten Umsetzungsschritte">
+        <figcaption>
+          <span>STRATEGIE UND UMSETZUNG</span>
+          <strong>Aus Komplexität wird ein klarer Weg.</strong>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
   <!-- Einstiegsangebot -->
-  <section style="background: #0D1117">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px; display: flex; flex-direction: column; align-items: center; text-align: center">
-      <p style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #5A9BF6">DER KLARE ERSTE SCHRITT</p>
+  <section id="potenzialcheck" style="background: #0D1117">
+    <div class="section-shell" style="display: flex; flex-direction: column; align-items: center; text-align: center">
+      <p style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #5A9BF6">STRUKTURIERTER EINSTIEG</p>
       <h2 style="margin: 0 0 20px; max-width: 700px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; color: #F5F7FA">KI-Potenzialcheck für Ihr Unternehmen</h2>
-      <p style="margin: 0; max-width: 680px; font-size: 17px; line-height: 1.65; color: rgba(245,247,250,0.72); text-wrap: pretty">Im KI-Potenzialcheck betrachten wir ausgewählte Prozesse und prüfen, an welchen Stellen KI einen konkreten Nutzen bringen kann. Wir priorisieren geeignete Anwendungsfälle, benennen offene Fragen und entwickeln einen realistischen Einstieg.</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 44px 0 44px; width: 100%">
-        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">DSGVO Konform<br>Sicherheit</div>
-        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">Individuelle Anwendungsfälle</div>
-        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">Rollen, IP Limitierung, Modell-, Skill- Management</div>
-        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">Integration und Automatisierung&nbsp;</div>
+      <p style="margin: 0; max-width: 700px; font-size: 17px; line-height: 1.65; color: rgba(245,247,250,0.74); text-wrap: pretty">Der Potenzialcheck schafft eine fundierte Entscheidungsgrundlage, bevor Zeit und Budget in einzelne Werkzeuge oder Projekte fließen.</p>
+      <div class="potential-grid responsive-grid" style="display: grid">
+        <div class="potential-step">
+          <span>01 · AUSGANGSLAGE</span>
+          <h3>Aufgaben und Rahmenbedingungen klären</h3>
+          <p>Wir wählen relevante Prozesse aus und erfassen Ziele, Datenquellen und beteiligte Rollen.</p>
+        </div>
+        <div class="potential-step">
+          <span>02 · BEWERTUNG</span>
+          <h3>Nutzen und Umsetzbarkeit bewerten</h3>
+          <p>Anwendungsfälle werden nach Nutzen, Aufwand, Datenlage und Risiken eingeordnet.</p>
+        </div>
+        <div class="potential-step">
+          <span>03 · ERGEBNIS</span>
+          <h3>Nächste Schritte priorisieren</h3>
+          <p>Sie erhalten priorisierte Anwendungsfälle und eine Empfehlung für das weitere Vorgehen.</p>
+        </div>
       </div>
-      <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 17px; font-weight: 500; padding: 15px 30px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #2A79EC; color: #FFFFFF">Kontakt aufnehmen</a>
+      <p style="margin: 0 0 30px; font-size: 14.5px; color: rgba(245,247,250,0.56)">Umfang und Zeitrahmen stimmen wir im Erstgespräch auf Ihre Ausgangslage ab.</p>
+      <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 17px; font-weight: 500; padding: 15px 30px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #2A79EC; color: #FFFFFF">Erstgespräch anfragen</a>
     </div>
   </section>
 
   <!-- Praxisbeispiele -->
   <section style="background: #FFFFFF">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
-      <div style="max-width: 700px; margin: 0 auto; text-align: center">
-        <h2 style="margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.03em; font-weight: 700">Wo KI im Arbeitsalltag helfen kann</h2>
-        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.72)">Der Nutzen entsteht meist nicht durch ein großes KI-Projekt. Oft beginnt er bei klar abgegrenzten Aufgaben, die regelmäßig Zeit kosten.</p>
+    <div class="section-shell">
+      <div class="section-intro">
+        <h2>Konkrete Einsatzfelder im Unternehmen</h2>
+        <p>Der Einstieg beginnt häufig bei klar abgegrenzten Aufgaben, die regelmäßig Zeit binden und sich sauber bewerten lassen.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 52px">
-        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">Informationen aus längeren Dokumenten erschließen</div>
-        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">Entwürfe für E-Mails, Angebote und interne Texte vorbereiten</div>
-        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">vorhandenes Unternehmenswissen leichter auffindbar machen</div>
-        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">Rechercheergebnisse strukturiert zusammenfassen</div>
-        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">wiederkehrende Dokumentenabläufe vereinfachen</div>
-        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">interne Vorlagen und Arbeitsanweisungen entwickeln</div>
-      </div>
-      <p style="margin: 28px auto 0; font-size: 14.5px; line-height: 1.6; color: rgba(29,29,31,0.55); max-width: 680px; text-align: center">Welche Anwendungen geeignet sind, hängt von den Aufgaben, den verwendeten Daten und den bestehenden Systemen ab.</p>
-    </div>
-  </section>
-
-  <!-- Grundlagen -->
-  <section style="background: #F5F7FA">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
-      <div style="max-width: 740px; margin: 0 auto; text-align: center">
-        <h2 style="margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700">Was ein dauerhafter KI-Einsatz voraussetzt</h2>
-        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.72); text-wrap: pretty">Ob KI im Unternehmen dauerhaft trägt, entscheidet sich selten am Modell. Häufiger an den Grundlagen: verlässliche Daten, klare Regeln und Mitarbeitende, die sicher damit arbeiten.</p>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 56px">
-        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
-          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Verlässliche Daten</h3>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">KI-Anwendungen sind nur so gut wie die Daten, mit denen sie arbeiten. Wir prüfen, welche Informationen vorhanden sind, wo sie liegen und wie sie zugänglich gemacht werden können — ohne die Datenlandschaft komplett umzubauen.</p>
+      <div class="use-case-grid" style="display: grid">
+        <div class="use-case-card">
+          <img class="use-case-image" src="assets/images/knowledge-system.webp" width="1672" height="941" loading="lazy" decoding="async" alt="Leuchtende, miteinander verbundene Wissensebenen aus Glas in einem dunklen Raum">
+          <div class="use-case-feature-content">
+            <span>DOKUMENTE UND TEXTE</span>
+            <h3>Informationen schneller erfassen und weiterverarbeiten</h3>
+            <p>Lange Dokumente erschließen, Inhalte zusammenfassen und Entwürfe für E-Mails, Angebote oder interne Texte vorbereiten.</p>
+          </div>
         </div>
-        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
-          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Klare Regeln</h3>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Regulatorische Vorgaben wie der EU AI Act stellen je nach Einsatz Anforderungen an Transparenz, Dokumentation und Risikobewertung. Wir helfen, Zuständigkeiten und interne Regeln so aufzusetzen, dass die Nutzung nachvollziehbar bleibt. Eine Rechtsberatung ersetzen wir nicht.</p>
+        <div class="use-case-card">
+          <span>WISSEN</span>
+          <h3>Wissen leichter zugänglich machen</h3>
+          <p>Vorhandene Informationen strukturiert auffindbar und für interne Fragen nutzbar machen.</p>
         </div>
-        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
-          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Befähigte Mitarbeitende</h3>
-          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Der Nutzen entsteht erst, wenn Mitarbeitende die Werkzeuge im Alltag sicher einsetzen. Wir begleiten den Start mit Einführungen, kurzen Schulungen und praxisnahen Workshops zu den tatsächlichen Arbeitsabläufen.</p>
+        <div class="use-case-card">
+          <span>ABLÄUFE</span>
+          <h3>Abläufe gezielt vereinfachen</h3>
+          <p>Dokumentenprozesse, Vorlagen und klar definierte Büroabläufe gezielt unterstützen.</p>
         </div>
       </div>
     </div>
@@ -242,25 +316,33 @@
 
   <!-- Über uns -->
   <section id="ueber-uns" style="background: #F5F7FA">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start">
-      <div>
-        <h2 style="margin: 0 0 22px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700">Beratung und Umsetzung aus einer Hand</h2>
-        <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir verbinden verständliche Beratung mit praktischer Umsetzung. Unser Ziel ist keine möglichst komplexe Lösung. Wir entwickeln einen Ansatz, der zu den Aufgaben, den vorhandenen Ressourcen und den Mitarbeitenden passt.</p>
-        <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir arbeiten mit etablierten KI-Plattformen, Automatisierungswerkzeugen und moderner Webtechnologie. Welche Werkzeuge eingesetzt werden, entscheiden wir anhand der Anforderungen. Nicht anhand eines Herstellers.</p>
-        <p style="margin: 0 0 32px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Unser Angebot richtet sich an Unternehmen aus Limburg-Weilburg und Umgebung sowie an Kunden, die wir remote betreuen.</p>
-        <div style="border: 1.5px dashed rgba(11,99,229,0.35); border-radius: 18px; padding: 22px 24px; font-family: 'SF Mono', Menlo, 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: rgba(29,29,31,0.5)">[Platzhalter: Abschnitt zu Personen, Rollen und Qualifikationen — wird später mit echten Angaben ergänzt]</div>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px">
-        <div data-parallax="0.07" style="will-change: transform">
-          <div role="img" aria-label="Persönliches Porträt" style="width: 100%; min-height: 460px; border-radius: 24px; background: linear-gradient(145deg, #EAF1FC 0%, #DCE7F8 100%); display: flex; align-items: center; justify-content: center; color: rgba(29,29,31,0.42); font-size: 14px; letter-spacing: 0.02em">Persönliches Porträt</div>
+    <div class="section-shell">
+      <div class="about-copy">
+        <h2>Beratung und Umsetzung aus einer Hand</h2>
+        <p>Wir verbinden strategische Einordnung mit praktischer Umsetzung. Ziel ist eine Lösung, die fachlich sinnvoll, wirtschaftlich nachvollziehbar und im Arbeitsalltag handhabbar ist.</p>
+        <p>Die Auswahl von Plattformen, Modellen und Automatisierungswerkzeugen richtet sich nach Ihren Anforderungen, Ihrer Systemlandschaft und den betrieblichen Rahmenbedingungen.</p>
+        <div class="about-facts responsive-grid" style="display: grid">
+          <div class="about-fact">
+            <strong>Persönlich erreichbar</strong>
+            <span>Vor Ort in Limburg-Weilburg und remote in ganz Deutschland.</span>
+          </div>
+          <div class="about-fact">
+            <strong>Anbieterunabhängig</strong>
+            <span>Die Lösung wird anhand der Aufgabe und nicht anhand eines Herstellers gewählt.</span>
+          </div>
+          <div class="about-fact">
+            <strong>Umsetzungsnah</strong>
+            <span>Beratung, Konfiguration, Workflows und Einführung greifen ineinander.</span>
+          </div>
         </div>
+        <!-- Vor Veröffentlichung ergänzen: Name, Porträt, Rolle, Qualifikationen und belastbare Referenzen. -->
       </div>
     </div>
   </section>
 
   <!-- FAQ -->
   <section style="background: #F5F7FA">
-    <div style="max-width: 800px; margin: 0 auto; padding: 110px 22px">
+    <div style="max-width: 800px; margin: 0 auto; padding: 96px 22px">
       <h2 style="margin: 0 0 40px; text-align: center; font-size: clamp(30px, 3.8vw, 44px); letter-spacing: -0.03em; font-weight: 700">Häufige Fragen</h2>
       <div id="faq-list" style="display: flex; flex-direction: column; gap: 12px"></div>
     </div>
@@ -268,10 +350,11 @@
 
   <!-- Kontakt -->
   <section id="kontakt" style="background: #FFFFFF">
-    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start">
+    <div class="responsive-grid" style="max-width: 1100px; margin: 0 auto; padding: 96px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start">
       <div>
-        <h2 style="margin: 0 0 20px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700">Lassen Sie uns über Ihren konkreten Anwendungsfall sprechen.</h2>
-        <p style="margin: 0 0 0; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">In einem ersten Gespräch klären wir, welche Aufgabe Sie lösen möchten und ob unser Angebot dazu passt. Sie benötigen dafür noch kein fertiges Konzept. Schreiben Sie uns eine E-Mail oder rufen Sie uns an — wir melden uns zeitnah zurück.</p>
+        <p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #0B63E5">UNVERBINDLICHES ERSTGESPRÄCH</p>
+        <h2 style="margin: 0 0 20px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700">Lassen Sie uns Ihre Ausgangslage klären.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Im ersten Gespräch ordnen wir die Aufgabe, die beteiligten Prozesse und die wichtigsten Rahmenbedingungen ein. Ein ausgearbeitetes Konzept benötigen Sie dafür nicht. Anschließend wissen Sie, welcher nächste Schritt sinnvoll ist.</p>
       </div>
       <div style="background: #F5F7FA; border-radius: 24px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
         <a href="mailto:[E-Mail-Adresse]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
@@ -302,10 +385,10 @@
 </main>
 
 <footer style="background: #F5F7FA; border-top: 1px solid rgba(29,29,31,0.08)">
-  <div style="max-width: 1100px; margin: 0 auto; padding: 48px 22px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px">
+  <div class="responsive-grid" style="max-width: 1100px; margin: 0 auto; padding: 48px 22px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px">
     <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 1.6; color: rgba(29,29,31,0.6)">
       <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #1D1D1F">[Unternehmensname]</p>
-      <p style="margin: 0">KI-Consulting &amp; digitale Lösungen</p>
+      <p style="margin: 0">KI-Beratung, Einführung &amp; Automatisierung</p>
       <p style="margin: 10px 0 0">[Adresse]</p>
       <a href="mailto:[E-Mail-Adresse]" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">[E-Mail-Adresse]</a>
       <a href="tel:[Telefonnummer]" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">[Telefonnummer]</a>
@@ -345,8 +428,20 @@
   ];
 
   function applyConfig() {
+    if (CONFIG.companyName) {
+      document.title = document.title.split('[Unternehmensname]').join(CONFIG.companyName);
+    }
+
     TOKENS.forEach(function (t) {
-      if (!t.value) return;
+      if (!t.value) {
+        var unavailableLinks = document.querySelectorAll('a[href*="' + t.token + '"]');
+        Array.prototype.forEach.call(unavailableLinks, function (a) {
+          a.removeAttribute('href');
+          a.setAttribute('aria-disabled', 'true');
+          a.setAttribute('title', 'Vor Veröffentlichung konfigurieren');
+        });
+        return;
+      }
       // Textknoten ersetzen
       var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
       var node;
@@ -401,18 +496,16 @@
 
   /* ---- FAQ-Akkordeon (Ersatz für sc-for / sc-if) ---- */
   var FAQS = [
-    { q: 'Für welche Unternehmen eignet sich die Beratung?',
-      a: 'Unser Angebot richtet sich an kleine und mittlere Unternehmen, die KI strukturiert einführen möchten und keine eigene KI-Abteilung besitzen. Besonders geeignet sind wiederkehrende Büro-, Dokumenten- und Wissensprozesse.' },
-    { q: 'Arbeiten Sie mit einer bestimmten KI-Plattform?',
-      a: 'Wir sind nicht auf eine einzelne Plattform festgelegt. Wir vergleichen geeignete Lösungen anhand der Aufgaben, der Daten, der Nutzerzahl, der Kosten und der betrieblichen Anforderungen.' },
+    { q: 'Für welche Unternehmen ist die Beratung geeignet?',
+      a: 'Unser Angebot richtet sich an kleine und mittlere Unternehmen, die KI strukturiert einführen möchten und dafür interne Orientierung oder praktische Unterstützung benötigen. Besonders geeignet sind wiederkehrende Büro-, Dokumenten- und Wissensprozesse.' },
+    { q: 'Sind Sie an bestimmte KI-Plattformen gebunden?',
+      a: 'Nein. Mit einer zentralen Lizenz können Sie selbst zwischen aktuell verfügbaren, leistungsfähigen KI-Modellen verschiedener Anbieter wählen, zum Beispiel GPT von OpenAI, Claude von Anthropic, Gemini von Google oder Modellen von Mistral AI. So setzen Sie für jede Aufgabe das passende Modell ein, ohne sich dauerhaft an einen einzelnen Anbieter zu binden.' },
     { q: 'Ist die Lösung automatisch DSGVO-konform?',
-      a: 'Nein. Ob eine Lösung datenschutzrechtlich zulässig ist, hängt vom konkreten Einsatz, den verarbeiteten Daten und den vereinbarten Bedingungen ab. Wir berücksichtigen Datenschutz und Informationssicherheit frühzeitig. Eine Rechtsberatung ersetzen wir nicht.' },
-    { q: 'Entwickeln Sie auch individuelle Software?',
-      a: 'Ja, wenn eine Standardplattform oder eine Low-Code-Lösung die Anforderungen nicht sinnvoll abdeckt. Wir begrenzen den Umfang klar und achten auf Tests, Dokumentation und eine wartbare Übergabe.' },
+      a: 'Nein. Ob eine Lösung datenschutzrechtlich zulässig ist, hängt vom konkreten Einsatz, den verarbeiteten Daten und den vertraglichen Bedingungen ab. Bei der Auswahl achten wir insbesondere auf ein nach ISO/IEC 27001 zertifiziertes Informationssicherheitsmanagement des Anbieters, geeignete Vereinbarungen zur Auftragsverarbeitung, den Ausschluss der Nutzung von Unternehmensdaten für das Modelltraining und Serverstandorte in Europa. Eine individuelle Rechtsberatung ersetzen wir nicht.' },
     { q: 'Welche Rolle spielen der EU AI Act und andere Vorgaben?',
-      a: 'Je nach Einsatz stellen regulatorische Vorgaben wie der EU AI Act Anforderungen an Transparenz, Dokumentation und Risikobewertung. Wir berücksichtigen diese Punkte bei Auswahl und Einrichtung und schaffen eine nachvollziehbare Grundlage. Die rechtliche Bewertung übernimmt eine juristische Beratung.' },
-    { q: 'Übernehmen Sie auch den laufenden Betrieb?',
-      a: 'Je nach Vereinbarung unterstützen wir bei Nutzerverwaltung, Lizenzen, Konfiguration, Fragen aus dem Arbeitsalltag und der Weiterentwicklung bestehender Workflows.' }
+      a: 'Je nach Einsatz können regulatorische Vorgaben wie der EU AI Act Anforderungen an Transparenz, Dokumentation und Risikobewertung stellen. Wir berücksichtigen diese Aspekte bei Auswahl und Einrichtung und schaffen eine nachvollziehbare technische und organisatorische Grundlage. Die rechtliche Bewertung übernimmt eine juristische Beratung.' },
+    { q: 'Wie unterstützen Sie uns nach der Einführung?',
+      a: 'Wir übernehmen auf Wunsch den laufenden Betrieb Ihrer KI-Lösungen und entwickeln sie kontinuierlich weiter. Das Service-Modell kann Monitoring, Nutzer- und Lizenzverwaltung, Konfigurationspflege, Support sowie die Anpassung von Workflows an neue Anforderungen umfassen. Leistungsumfang, Reaktionszeiten und Verantwortlichkeiten vereinbaren wir passend zu Ihrem Betrieb.' }
   ];
 
   function initFaq() {
@@ -480,20 +573,16 @@
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
-          en.target.style.opacity = '1';
-          en.target.style.transform = 'translateY(0)';
+          en.target.classList.add('is-visible');
           observer.unobserve(en.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.14, rootMargin: '0px 0px -72px 0px' });
 
-    function prep(el, delay) {
+    function prep(el, delay, type) {
       if (!el || el.dataset.fx) return;
-      el.dataset.fx = '1';
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(28px)';
-      el.style.transition = 'opacity 0.8s ' + ease + ', transform 0.8s ' + ease;
-      el.style.transitionDelay = delay + 'ms';
+      el.dataset.fx = type || 'rise';
+      el.style.setProperty('--fx-delay', delay + 'ms');
       observer.observe(el);
     }
 
@@ -503,7 +592,9 @@
         var inner = hero.querySelector(':scope > div:not(:empty)');
         if (inner && !inner.dataset.fxHero) {
           inner.dataset.fxHero = '1';
-          [].slice.call(inner.children).forEach(function (c, i) {
+          [].slice.call(inner.children).filter(function (c) {
+            return !c.hasAttribute('aria-hidden');
+          }).forEach(function (c, i) {
             c.style.opacity = '0';
             c.style.transform = 'translateY(22px)';
             c.style.transition = 'opacity 0.9s ' + ease + ', transform 0.9s ' + ease;
@@ -517,20 +608,45 @@
           });
         }
       }
-      document.querySelectorAll('main section').forEach(function (sec) {
-        if (sec.id === 'start') return;
-        sec.querySelectorAll('div, ol, ul').forEach(function (el) {
-          if (el.style.display === 'grid') {
-            [].slice.call(el.children).forEach(function (c, i) { prep(c, Math.min(i, 8) * 90); });
-          }
-        });
-        sec.querySelectorAll('h2').forEach(function (el) {
-          if (el.closest('[data-fx]')) return;
-          var p = el.parentElement;
-          var target = (p && p !== sec && p.children.length <= 3 && !p.querySelector('[style*="grid"]')) ? p : el;
-          prep(target, 0);
+
+      document.querySelectorAll('.section-intro').forEach(function (el) {
+        prep(el, 0, 'heading');
+      });
+
+      document.querySelectorAll('.benefit-grid, .services-grid, .potential-grid, .use-case-grid, .about-facts').forEach(function (group) {
+        [].slice.call(group.children).forEach(function (card, i) {
+          prep(card, Math.min(i, 6) * 110, 'card');
         });
       });
+
+      document.querySelectorAll('.visual-story').forEach(function (visual) {
+        prep(visual, 0, 'visual');
+      });
+
+      document.querySelectorAll('#faq-list > div').forEach(function (item, i) {
+        prep(item, Math.min(i, 5) * 75, 'card');
+      });
+
+      document.querySelectorAll('main section:not(#start) h2').forEach(function (el) {
+        if (el.closest('#potenzialcheck') || el.closest('#kontakt')) return;
+        if (!el.closest('[data-fx]')) prep(el, 0, 'heading');
+      });
+
+      var potential = document.querySelector('#potenzialcheck .section-shell');
+      if (potential) {
+        [].slice.call(potential.children).forEach(function (el, i) {
+          if (!el.dataset.fx && !el.classList.contains('potential-grid')) {
+            prep(el, Math.min(i, 4) * 70, i < 2 ? 'heading' : 'rise');
+          }
+        });
+      }
+
+      var contactGrid = document.querySelector('#kontakt > .responsive-grid');
+      if (contactGrid) {
+        [].slice.call(contactGrid.children).forEach(function (el, i) {
+          prep(el, i * 120, i === 0 ? 'heading' : 'card');
+        });
+      }
     }
 
     collect();
@@ -654,18 +770,18 @@
     }
 
     var labels = [
-      'Verbinde Microsoft 365',
-      'Verbinde Google Workspace',
-      'Dokumente erschließen',
-      'Entwürfe vorbereiten',
-      'Wissen auffindbar machen',
-      'Recherche zusammenfassen',
-      'Abläufe vereinfachen',
-      'Vorlagen entwickeln',
+      'Microsoft 365 integrieren',
+      'Google Workspace integrieren',
+      'Dokumentenwissen erschließen',
+      'Textentwürfe vorbereiten',
+      'Unternehmenswissen verfügbar machen',
+      'Recherche strukturiert aufbereiten',
+      'Abläufe automatisieren',
+      'Wiederverwendbare Vorlagen entwickeln',
       'Anwendungsfälle priorisieren',
-      'Rollen und Zugriffe klären',
-      'Daten strukturieren',
-      'Pilotbetrieb vorbereiten'
+      'Rollen und Zugriffe verwalten',
+      'Datenquellen strukturieren',
+      'Pilotbetrieb planen'
     ];
     var anno = { node: -1, t0: 0, li: -1 };
 
