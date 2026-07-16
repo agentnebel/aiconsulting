@@ -102,13 +102,35 @@
   @media (max-width: 1080px) {
     .nav-desktop { display: none; }
     .nav-toggle { display: flex; }
+    .nav-toggle { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      max-height: calc(100vh - 52px);
+      max-height: calc(100dvh - 52px);
+      overflow-y: auto;
+      box-shadow: 0 18px 42px rgba(29,29,31,0.1);
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
   }
   @media (min-width: 1081px) {
     .nav-toggle { display: none !important; }
-    .mobile-menu.open { display: none; }
+    .mobile-menu, .mobile-menu.open { display: none; }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .section-shell { padding: 76px 22px; }
+    .hero-content { padding: 82px 22px 96px !important; }
+    .hero-kicker { order: 1; }
+    .hero-title { order: 2; }
+    .hero-visual-space { order: 3; height: clamp(220px, 64vw, 260px) !important; }
+    .hero-lede { order: 4; }
+    .hero-actions { order: 5; }
+    .hero-trust-spacer { order: 6; height: 24px; }
     .benefit-grid, .services-grid, .potential-grid, .about-facts { grid-template-columns: minmax(0, 1fr) !important; }
     .services-grid { grid-template-rows: auto; }
     .service-primary { grid-row: auto; padding: 36px; }
@@ -125,13 +147,40 @@
   }
   @media (max-width: 480px) {
     .responsive-grid { grid-template-columns: minmax(0, 1fr) !important; }
-    .hero-content { padding-top: 78px !important; }
+    .section-shell { padding: 66px 20px; }
+    .hero-content { padding: 68px 22px 78px !important; }
     .hero-actions { width: min(100%, 310px); flex-direction: column; gap: 10px; padding: 10px; border-radius: 28px; background: #FFFFFF; }
     .hero-actions a { width: 100%; min-height: 50px; justify-content: center; }
     .hero-lede { margin-bottom: 24px !important; padding: 10px 12px; border-radius: 18px; background: #FFFFFF; }
-    .hero-trust-spacer { height: 95px; }
+    .hero-trust-spacer { height: 24px; }
     .benefit-card, .service-card, .service-primary, .potential-step, .use-case-card { padding: 28px; }
     .about-copy > p { font-size: 17px; }
+    .contact-panel { padding: 24px !important; }
+    .contact-row { gap: 14px !important; padding-right: 18px !important; padding-left: 18px !important; }
+    .contact-value { min-width: 0; overflow-wrap: anywhere; }
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    header {
+      background: rgba(255,255,255,0.97) !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    [data-fx] { will-change: auto; }
+    [data-fx="heading"] { filter: none !important; transform: translate3d(0, 20px, 0) scale(0.985); }
+    .benefit-card[data-fx],
+    .service-card[data-fx],
+    .potential-step[data-fx],
+    .use-case-card[data-fx],
+    .about-fact[data-fx] {
+      transition: opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+      transition-delay: var(--fx-delay, 0ms);
+      will-change: auto;
+    }
+    .visual-story img,
+    .visual-story.is-visible img,
+    .use-case-image,
+    .use-case-card.is-visible .use-case-image { transform: scale(1); transition: none; }
   }
 
   @media print {
@@ -356,24 +405,24 @@
         <h2 style="margin: 0 0 20px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700">Lassen Sie uns Ihre Ausgangslage klären.</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Im ersten Gespräch ordnen wir die Aufgabe, die beteiligten Prozesse und die wichtigsten Rahmenbedingungen ein. Ein ausgearbeitetes Konzept benötigen Sie dafür nicht. Anschließend wissen Sie, welcher nächste Schritt sinnvoll ist.</p>
       </div>
-      <div style="background: #F5F7FA; border-radius: 24px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
-        <a href="mailto:[E-Mail-Adresse]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
+      <div class="contact-panel" style="background: #F5F7FA; border-radius: 24px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+        <a class="contact-row" href="mailto:[E-Mail-Adresse]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
           <span aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #EAF1FC; color: #0B63E5; display: flex; align-items: center; justify-content: center; font-size: 20px">✉</span>
-          <span style="display: flex; flex-direction: column; gap: 2px">
+          <span class="contact-value" style="display: flex; flex-direction: column; gap: 2px">
             <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(29,29,31,0.55)">E-MAIL</span>
             <span style="font-size: 17px; font-weight: 500; color: #0B63E5">[E-Mail-Adresse]</span>
           </span>
         </a>
-        <a href="tel:[Telefonnummer]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
+        <a class="contact-row" href="tel:[Telefonnummer]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
           <span aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #EAF1FC; color: #0B63E5; display: flex; align-items: center; justify-content: center; font-size: 20px">☎</span>
-          <span style="display: flex; flex-direction: column; gap: 2px">
+          <span class="contact-value" style="display: flex; flex-direction: column; gap: 2px">
             <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(29,29,31,0.55)">TELEFON</span>
             <span style="font-size: 17px; font-weight: 500; color: #0B63E5">[Telefonnummer]</span>
           </span>
         </a>
-        <div style="display: flex; align-items: center; gap: 18px; padding: 8px 24px 0">
+        <div class="contact-row" style="display: flex; align-items: center; gap: 18px; padding: 8px 24px 0">
           <span aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #EAF1FC; color: #0B63E5; display: flex; align-items: center; justify-content: center; font-size: 20px">◎</span>
-          <span style="display: flex; flex-direction: column; gap: 2px">
+          <span class="contact-value" style="display: flex; flex-direction: column; gap: 2px">
             <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(29,29,31,0.55)">STANDORT</span>
             <span style="font-size: 16px; color: rgba(29,29,31,0.8)">Limburg-Weilburg und remote in ganz Deutschland</span>
           </span>
@@ -491,7 +540,9 @@
       a.addEventListener('click', function () { setOpen(false); });
     });
     // Beim Wechsel auf Desktop schließen
-    mq.addEventListener('change', function () { if (!mq.matches) setOpen(false); });
+    var handleBreakpoint = function () { if (!mq.matches) setOpen(false); };
+    if (mq.addEventListener) mq.addEventListener('change', handleBreakpoint);
+    else mq.addListener(handleBreakpoint);
   }
 
   /* ---- FAQ-Akkordeon (Ersatz für sc-for / sc-if) ---- */
@@ -656,6 +707,7 @@
   /* ---- Parallax ---- */
   function initParallax() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
 
     var heroSec = document.getElementById('start');
     var heroCanvas = heroSec ? heroSec.querySelector('canvas') : null;
@@ -703,17 +755,66 @@
     var canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    if (!ctx) return;
+    var motionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var reduced = motionMedia.matches;
+    var mobileMedia = window.matchMedia('(hover: none) and (pointer: coarse)');
+    var mobileProfile = mobileMedia.matches || window.innerWidth <= 800;
+    var dpr = Math.min(window.devicePixelRatio || 1, mobileProfile ? 1.5 : 2);
     var w = 0, h = 0, t = 0;
     var raf = null;
+    var heroVisible = true;
+    var lastFrame = 0;
+    var frameScale = 1;
+    var frameInterval = mobileProfile ? 1000 / 30 : 0;
+    var veilGradient = null;
+    var pulseSprite = null;
+    var resizeTimer = null;
+    var heroVisualSpace = canvas.parentElement.querySelector('.hero-visual-space');
+    var heroTitle = canvas.parentElement.querySelector('.hero-title');
+    var mobileCy = 0;
+
+    function createPulseSprite() {
+      var size = 14;
+      var sprite = document.createElement('canvas');
+      sprite.width = Math.max(1, Math.round(size * dpr));
+      sprite.height = Math.max(1, Math.round(size * dpr));
+      var spriteCtx = sprite.getContext('2d');
+      if (!spriteCtx) return null;
+      spriteCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var glow = spriteCtx.createRadialGradient(7, 7, 0, 7, 7, 7);
+      glow.addColorStop(0, 'rgba(10,132,255,0.9)');
+      glow.addColorStop(1, 'rgba(10,132,255,0)');
+      spriteCtx.fillStyle = glow;
+      spriteCtx.fillRect(0, 0, size, size);
+      return sprite;
+    }
 
     function resize() {
       var r = canvas.getBoundingClientRect();
-      w = r.width; h = r.height;
-      canvas.width = Math.round(w * dpr);
-      canvas.height = Math.round(h * dpr);
+      mobileProfile = mobileMedia.matches || window.innerWidth <= 800;
+      dpr = Math.min(window.devicePixelRatio || 1, mobileProfile ? 1.5 : 2);
+      frameInterval = mobileProfile ? 1000 / 30 : 0;
+      var nextW = Math.max(1, r.width);
+      var nextH = Math.max(1, r.height);
+      var backingW = Math.max(1, Math.round(nextW * dpr));
+      var backingH = Math.max(1, Math.round(nextH * dpr));
+      var visualRect = heroVisualSpace ? heroVisualSpace.getBoundingClientRect() : null;
+      var titleRect = heroTitle ? heroTitle.getBoundingClientRect() : null;
+      mobileCy = visualRect ? visualRect.top - r.top + visualRect.height / 2 : 0;
+      var veilCy = mobileProfile && titleRect ? titleRect.top - r.top + titleRect.height / 2 : nextH * 0.34;
+      var veilRadius = Math.min(nextW, nextH) * (mobileProfile ? 0.34 : 0.52);
+      if (canvas.width === backingW && canvas.height === backingH &&
+          Math.abs(w - nextW) < 0.5 && Math.abs(h - nextH) < 0.5) return false;
+      w = nextW; h = nextH;
+      canvas.width = backingW;
+      canvas.height = backingH;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      veilGradient = ctx.createRadialGradient(w / 2, veilCy, 0, w / 2, veilCy, veilRadius);
+      veilGradient.addColorStop(0, mobileProfile ? 'rgba(255,255,255,0.78)' : 'rgba(255,255,255,0.88)');
+      veilGradient.addColorStop(1, 'rgba(255,255,255,0)');
+      pulseSprite = createPulseSprite();
+      return true;
     }
 
     var scan = { x: 0.32, y: 0.58, tx: 0.32, ty: 0.58, hover: false };
@@ -787,12 +888,16 @@
 
     var rot = { off: 0, pitch: -0.12 };
     var proj = new Array(N);
+    for (var p1 = 0; p1 < N; p1++) proj[p1] = { x: 0, y: 0, f: 1 };
     function project() {
-      var cx = w * 0.5, cy = h * 0.52, R = Math.min(w, h) * 0.36;
+      var cx = w * 0.5;
+      var cy = mobileProfile && mobileCy > 0 ? mobileCy : h * 0.52;
+      var R = Math.min(w, h) * 0.36;
       var offT = scan.hover ? (scan.tx - 0.5) * 1.2 : 0;
       var pitchT = -0.12 + (scan.hover ? (scan.ty - 0.5) * 0.6 : 0);
-      rot.off += (offT - rot.off) * 0.04;
-      rot.pitch += (pitchT - rot.pitch) * 0.04;
+      var blend = 1 - Math.pow(0.96, frameScale);
+      rot.off += (offT - rot.off) * blend;
+      rot.pitch += (pitchT - rot.pitch) * blend;
       var yaw = t * 0.06 + rot.off;
       var cosY = Math.cos(yaw), sinY = Math.sin(yaw);
       var cosX = Math.cos(rot.pitch), sinX = Math.sin(rot.pitch);
@@ -803,7 +908,10 @@
         var y1 = n.y * cosX - z1 * sinX;
         z1 = n.y * sinX + z1 * cosX;
         var f = 2.6 / (2.6 + z1);
-        proj[i] = { x: cx + x1 * R * f, y: cy + y1 * R * f, f: f };
+        var projected = proj[i];
+        projected.x = cx + x1 * R * f;
+        projected.y = cy + y1 * R * f;
+        projected.f = f;
       }
     }
 
@@ -840,12 +948,12 @@
           ctx.lineWidth = 1;
           ctx.stroke();
         }
-        if (!scanned) n.act *= 0.97;
+        if (!scanned) n.act *= Math.pow(0.97, frameScale);
       }
       if (!scanned && !reduced) {
         for (var pi = 0; pi < pulses.length; pi++) {
           var pl = pulses[pi];
-          pl.p += pl.s * pl.dir;
+          pl.p += pl.s * pl.dir * frameScale;
           if (pl.p >= 1 || pl.p <= 0) {
             var nodeIdx = edges[pl.e][pl.p >= 1 ? 1 : 0];
             nodes3[nodeIdx].act = 1;
@@ -857,18 +965,40 @@
           }
           var ea = proj[edges[pl.e][0]], eb = proj[edges[pl.e][1]];
           var x = ea.x + (eb.x - ea.x) * pl.p, y = ea.y + (eb.y - ea.y) * pl.p;
-          var g = ctx.createRadialGradient(x, y, 0, x, y, 7);
-          g.addColorStop(0, 'rgba(10,132,255,0.9)');
-          g.addColorStop(1, 'rgba(10,132,255,0)');
-          ctx.fillStyle = g;
-          ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.fill();
+          if (pulseSprite) ctx.drawImage(pulseSprite, x - 7, y - 7, 14, 14);
           ctx.fillStyle = 'rgba(255,255,255,0.95)';
           ctx.beginPath(); ctx.arc(x, y, 1.6, 0, Math.PI * 2); ctx.fill();
         }
       }
     }
 
-    function draw() {
+    function canAnimate() {
+      return !reduced && heroVisible && !document.hidden;
+    }
+
+    function stopAnimation() {
+      if (raf !== null) cancelAnimationFrame(raf);
+      raf = null;
+      lastFrame = 0;
+    }
+
+    function startAnimation() {
+      if (!canAnimate() || raf !== null) return;
+      lastFrame = 0;
+      raf = requestAnimationFrame(draw);
+    }
+
+    function draw(timestamp, force) {
+      raf = null;
+      if (!force && !canAnimate()) return;
+      var now = typeof timestamp === 'number' ? timestamp : performance.now();
+      if (!force && frameInterval && lastFrame && now - lastFrame < frameInterval - 1) {
+        raf = requestAnimationFrame(draw);
+        return;
+      }
+      var delta = lastFrame ? Math.min(50, Math.max(1, now - lastFrame)) : 16.667;
+      lastFrame = now;
+      frameScale = delta / 16.667;
       ctx.clearRect(0, 0, w, h);
       project();
       drawNet(false);
@@ -956,12 +1086,10 @@
         ctx.fillStyle = 'rgba(29,29,31,' + alpha.toFixed(3) + ')';
         ctx.fillText(shown + (chars < text.length ? '▏' : ''), bx + 24, by + bh / 2 + 4.5);
       }
-      var rg = ctx.createRadialGradient(w / 2, h * 0.34, 0, w / 2, h * 0.34, Math.min(w, h) * 0.52);
-      rg.addColorStop(0, 'rgba(255,255,255,0.88)');
-      rg.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = rg;
+      ctx.fillStyle = veilGradient || 'rgba(255,255,255,0)';
       ctx.fillRect(0, 0, w, h);
-      if (!reduced) { t += 0.016; raf = requestAnimationFrame(draw); }
+      if (!reduced) t += delta / 1000;
+      if (canAnimate()) raf = requestAnimationFrame(draw);
     }
 
     var heroCard = canvas.parentElement;
@@ -972,11 +1100,61 @@
       scan.ty = (e.clientY - r.top) / Math.max(1, r.height);
     });
     heroCard.addEventListener('mouseleave', function () { scan.hover = false; });
-    window.addEventListener('resize', function () { resize(); if (reduced) draw(); });
+
+    function drawStatic() {
+      lastFrame = 0;
+      frameScale = 1;
+      draw(performance.now(), true);
+    }
+
+    function handleResize() {
+      if (mobileProfile) stopAnimation();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        resize();
+        if (reduced) {
+          if (heroVisible) drawStatic();
+        } else {
+          startAnimation();
+        }
+      }, 160);
+    }
+
+    var initialRect = heroCard.getBoundingClientRect();
+    heroVisible = initialRect.bottom >= -160 && initialRect.top <= window.innerHeight + 160;
+    if ('IntersectionObserver' in window) {
+      var heroObserver = new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        if (!heroVisible) stopAnimation();
+        else if (reduced) drawStatic();
+        else startAnimation();
+      }, { rootMargin: '160px 0px' });
+      heroObserver.observe(heroCard);
+    }
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stopAnimation();
+      else if (reduced && heroVisible) drawStatic();
+      else startAnimation();
+    });
+
+    var handleMotionPreference = function (event) {
+      reduced = event.matches;
+      stopAnimation();
+      if (reduced) {
+        if (heroVisible) drawStatic();
+      } else {
+        startAnimation();
+      }
+    };
+    if (motionMedia.addEventListener) motionMedia.addEventListener('change', handleMotionPreference);
+    else motionMedia.addListener(handleMotionPreference);
+
+    window.addEventListener('resize', handleResize, { passive: true });
 
     resize();
-    if (reduced) { draw(); return; }
-    raf = requestAnimationFrame(draw);
+    if (reduced) drawStatic();
+    else startAnimation();
   }
 
   function init() {
@@ -986,7 +1164,7 @@
     initFaq();
     initScrollEffects();
     initParallax();
-    startHeroAnimation();
+    requestAnimationFrame(startHeroAnimation);
   }
 
   if (document.readyState === 'loading') {
