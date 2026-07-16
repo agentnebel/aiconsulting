@@ -138,6 +138,12 @@
     .visual-story::after { background: linear-gradient(180deg, rgba(255,255,255,0.04) 24%, rgba(255,255,255,0.96) 82%); }
     .visual-story img { object-position: 38% center; }
     .visual-story figcaption { top: auto; right: 28px; bottom: 30px; left: 28px; width: auto; transform: none; }
+    /* Auf kleinen Bildschirmen sollen die kurzen Einsatzfeld-Karten ihrem Inhalt folgen.
+       Das Feature bleibt bewusst groß; bei Wissen und Abläufen erzeugte die Desktop-
+       Verteilung von Label oben und Text unten ansonsten unnötig viel Leerraum. */
+    .use-case-card:not(:first-child) { min-height: 0; display: block; }
+    .use-case-card:not(:first-child) > span { display: block; margin-bottom: 20px; }
+    .use-case-card:not(:first-child) h3 { margin-top: 0; }
   }
   @media (max-width: 480px) {
     .responsive-grid { grid-template-columns: minmax(0, 1fr) !important; }
