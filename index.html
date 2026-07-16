@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Consulting für KMU | [Unternehmensname]</title>
+<meta name="description" content="Wir unterstützen kleine und mittlere Unternehmen bei Auswahl, Einführung und Betrieb passender KI-Lösungen. Persönlich in Limburg-Weilburg und remote in Deutschland.">
+<!--
+  Vor Veröffentlichung ausfüllen: die Platzhalter unten im CONFIG-Objekt (Firmenname,
+  E-Mail, Telefon, Adresse, LinkedIn). Werte, die leer bleiben, zeigen weiterhin den
+  sichtbaren Platzhalter (z. B. [Unternehmensname]).
+-->
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body { margin: 0; background: #FFFFFF; color: #1D1D1F; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #0B63E5; text-decoration: none; }
+  a:hover { color: #0A54C2; }
+  :focus-visible { outline: 3px solid #0B63E5; outline-offset: 3px; border-radius: 6px; }
+  ::selection { background: #EAF1FC; }
+  input, textarea, button { font-family: inherit; }
+
+  /* Desktop-Navigation vs. mobiles Menü (ersetzt die DC-<sc-if>-Blöcke) */
+  .nav-desktop { display: flex; align-items: center; gap: 30px; }
+  .nav-toggle { display: none; }
+  .mobile-menu { display: none; }
+  .mobile-menu.open { display: flex; }
+  @media (max-width: 1080px) {
+    .nav-desktop { display: none; }
+    .nav-toggle { display: flex; }
+  }
+  @media (min-width: 1081px) {
+    .nav-toggle { display: none !important; }
+    .mobile-menu.open { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(29,29,31,0.08)">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 22px; height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 24px">
+    <a href="#start" style="font-weight: 600; font-size: 16px; color: #1D1D1F; letter-spacing: -0.01em">[Unternehmensname]</a>
+    <nav class="nav-desktop" aria-label="Hauptnavigation">
+      <a href="#start" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Start</a>
+      <a href="#ki-consulting" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Leistungen</a>
+      <a href="#digitale-loesungen" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Digitale Lösungen</a>
+      <a href="#ueber-uns" style="color: rgba(29,29,31,0.85); font-size: 13.5px; font-weight: 400" style-hover="color: #0B63E5">Über uns</a>
+      <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 13px; font-weight: 500; padding: 8px 16px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #0A54C2; color: #FFFFFF">Kontakt</a>
+    </nav>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menü öffnen oder schließen" style="flex-direction: column; gap: 5px; background: none; border: none; border-radius: 10px; padding: 12px 10px; cursor: pointer">
+      <span style="display: block; width: 20px; height: 1.5px; background: #1D1D1F"></span>
+      <span style="display: block; width: 20px; height: 1.5px; background: #1D1D1F"></span>
+    </button>
+  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobiles Menü" style="flex-direction: column; gap: 2px; padding: 10px 24px 24px; border-top: 1px solid rgba(29,29,31,0.08); background: rgba(255,255,255,0.98)">
+    <a href="#start" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Start</a>
+    <a href="#ki-consulting" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Leistungen</a>
+    <a href="#digitale-loesungen" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Digitale Lösungen</a>
+    <a href="#ueber-uns" data-close-menu style="color: #1D1D1F; font-size: 19px; font-weight: 500; padding: 12px 4px">Über uns</a>
+    <a href="#kontakt" data-close-menu style="display: inline-flex; justify-content: center; background: #0B63E5; color: #FFFFFF; font-size: 16px; font-weight: 500; padding: 14px 22px; border-radius: 980px; margin-top: 12px">Kontakt</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="start" style="position: relative; overflow: hidden; background: #FFFFFF">
+    <canvas id="hero-canvas" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; pointer-events: none"></canvas>
+    <div style="position: relative; max-width: 1100px; margin: 0 auto; padding: 118px 22px 130px; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <p style="margin: 0 0 18px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">KI-CONSULTING FÜR KLEINE UND MITTLERE UNTERNEHMEN</p>
+      <h1 style="margin: 0 0 22px; max-width: 900px; font-size: clamp(44px, 6.4vw, 84px); line-height: 1.03; letter-spacing: -0.035em; font-weight: 700">KI, die in Ihrem Unternehmen wirklich funktioniert.</h1>
+      <p style="margin: 0 0 34px; max-width: 660px; font-size: clamp(18px, 2vw, 21px); line-height: 1.5; font-weight: 400; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir unterstützen kleine und mittlere Unternehmen dabei, passende KI-Lösungen auszuwählen, sicher einzuführen und dauerhaft nutzbar zu machen. Mit klaren Regeln, praxistauglichen Workflows und persönlicher Begleitung.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center">
+        <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 17px; font-weight: 500; padding: 15px 30px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #0A54C2; color: #FFFFFF">Kontakt aufnehmen</a>
+        <a href="#ki-consulting" style="display: inline-flex; align-items: center; gap: 4px; color: #0B63E5; font-size: 17px; font-weight: 400" style-hover="color: #0A54C2">Leistungen ansehen <span aria-hidden="true" style="font-size: 19px">›</span></a>
+      </div>
+      <p style="margin: 30px 0 0; font-size: 14px; color: rgba(29,29,31,0.55)">Plattformunabhängig&nbsp;·&nbsp;Datenschutzbewusst&nbsp;·&nbsp;Verständlich umgesetzt</p>
+      <div aria-hidden="true" style="height: 260px"></div>
+    </div>
+  </section>
+
+  <!-- Ausgangslage -->
+  <section style="background: #F5F7FA">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
+      <div style="max-width: 740px; margin: 0 auto; text-align: center">
+        <h2 style="margin: 0 0 22px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700">KI ist schnell verfügbar. Damit ist sie noch nicht sinnvoll eingeführt.</h2>
+        <p style="margin: 0 0 14px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Viele Unternehmen testen bereits einzelne KI-Tools. Häufig fehlen jedoch klare Zuständigkeiten, abgestimmte Regeln und ein gemeinsames Verständnis dafür, welche Daten verarbeitet werden dürfen. Gleichzeitig bleibt unklar, welche Anwendungen im Arbeitsalltag wirklich helfen.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir schaffen Struktur. Gemeinsam prüfen wir Aufgaben, Daten und bestehende Abläufe. Daraus entwickeln wir eine Lösung, die zum Unternehmen und zu den Mitarbeitenden passt.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 56px">
+        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
+          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Klare Auswahl statt Tool-Chaos</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir prüfen, welche Plattformen und Modelle zu den tatsächlichen Aufgaben passen. Dabei berücksichtigen wir Kosten, Bedienbarkeit, Datenschutz und den späteren Betrieb.</p>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
+          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Verantwortbare Nutzung</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir strukturieren Rollen, Zugriffe und interne Regeln. Eine rechtliche Beratung ersetzen wir nicht. Wir schaffen jedoch eine belastbare Grundlage für die technische und organisatorische Einführung.</p>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
+          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Umsetzung statt Konzeptpapier</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir richten Lösungen ein, entwickeln erste Workflows und begleiten die Mitarbeitenden beim Start. Anpassungen entstehen aus der praktischen Nutzung.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="ki-consulting" style="background: #FFFFFF">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center">
+        <h2 style="margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.03em; font-weight: 700">Unsere Leistungen</h2>
+        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.72)">Wir beginnen nicht bei einem bestimmten Tool. Wir beginnen bei der Aufgabe, die gelöst werden soll.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-top: 56px">
+        <div style="background: #F5F7FA; border-radius: 24px; padding: 38px 34px">
+          <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">01</p>
+          <h3 style="margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">KI-Strategie und Potenzialcheck</h3>
+          <p style="margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir analysieren wiederkehrende Aufgaben und identifizieren sinnvolle Einsatzmöglichkeiten. Sie erhalten eine priorisierte Auswahl möglicher Anwendungsfälle und eine realistische Empfehlung für die nächsten Schritte.</p>
+          <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(29,29,31,0.7)">
+            <li>Prozesse und Anforderungen erfassen</li>
+            <li>Anwendungsfälle bewerten</li>
+            <li>Plattformen und Modelle vergleichen</li>
+            <li>Risiken und Verantwortlichkeiten klären</li>
+            <li>konkrete nächste Schritte festlegen</li>
+          </ul>
+        </div>
+        <div style="background: #F5F7FA; border-radius: 24px; padding: 38px 34px">
+          <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">02</p>
+          <h3 style="margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">KI-Einführung und laufender Betrieb</h3>
+          <p style="margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir richten geeignete KI-Plattformen ein und begleiten die Einführung im Unternehmen. Dabei kümmern wir uns um Rollen, Zugriffe, Nutzerverwaltung und die Weiterentwicklung der Konfiguration.</p>
+          <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(29,29,31,0.7)">
+            <li>technische Einrichtung</li>
+            <li>Rollen und Berechtigungen</li>
+            <li>Nutzer- und Lizenzverwaltung</li>
+            <li>Einführung, Schulungen und Workshops für Mitarbeitende</li>
+            <li>laufende Unterstützung</li>
+          </ul>
+        </div>
+        <div style="background: #F5F7FA; border-radius: 24px; padding: 38px 34px">
+          <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: #0B63E5">03</p>
+          <h3 style="margin: 0 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -0.015em">KI-Workflows und digitale Werkzeuge</h3>
+          <p style="margin: 0 0 18px; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Wir entwickeln praktische Hilfsmittel für konkrete Arbeitsabläufe. Das können wiederverwendbare Vorlagen, Assistants, Wissensstrukturen, Automatisierungen oder kleine interne Anwendungen sein. Über Connectoren binden wir KI an bestehende Systeme an, zum Beispiel Microsoft 365 oder Google Workspace.</p>
+          <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.5; color: rgba(29,29,31,0.7)">
+            <li>Recherche und Zusammenfassungen</li>
+            <li>Text- und Dokumentenarbeit</li>
+            <li>interne Wissensabfragen</li>
+            <li>Anbindung an Microsoft 365, Google Workspace und weitere Systeme</li>
+            <li>wiederkehrende Büroprozesse</li>
+            <li>kleine Webanwendungen und Tools</li>
+          </ul>
+        </div>
+      </div>
+      <div id="digitale-loesungen" style="margin-top: 18px; background: #0B63E5; border-radius: 24px; padding: 44px 40px; color: #FFFFFF">
+        <p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.85)">04</p>
+        <h3 style="margin: 0 0 14px; font-size: 26px; font-weight: 700; letter-spacing: -0.02em">Webdesign und lokale Anwendungen</h3>
+        <p style="margin: 0 0 32px; max-width: 720px; font-size: 16.5px; line-height: 1.6; color: rgba(255,255,255,0.85); text-wrap: pretty">Neben KI gestalten und bauen wir Ihre digitale Basis: professionelle Websites und maßgeschneiderte, lokal laufende Anwendungen, die konkrete Aufgaben in Ihrem Betrieb erledigen.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
+          <div style="background: rgba(255,255,255,0.1); border-radius: 18px; padding: 28px">
+            <h4 style="margin: 0 0 14px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Webdesign</h4>
+            <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 9px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9)">
+              <li>One-Pager und kompakte Unternehmenswebsites</li>
+              <li>responsive, moderne Umsetzung</li>
+              <li>technische Einrichtung und Hosting</li>
+              <li>Pflege und laufende Änderungen</li>
+            </ul>
+          </div>
+          <div style="background: rgba(255,255,255,0.1); border-radius: 18px; padding: 28px">
+            <h4 style="margin: 0 0 14px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em">Lokale produktive Apps</h4>
+            <ul style="margin: 0; padding: 0 0 0 20px; display: flex; flex-direction: column; gap: 9px; font-size: 15px; line-height: 1.5; color: rgba(255,255,255,0.9)">
+              <li>maßgeschneiderte Tools für Ihre Abläufe</li>
+              <li>laufen lokal, ohne Cloud-Zwang</li>
+              <li>Daten bleiben im Unternehmen</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Einstiegsangebot -->
+  <section style="background: #0D1117">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px; display: flex; flex-direction: column; align-items: center; text-align: center">
+      <p style="margin: 0 0 16px; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: #5A9BF6">DER KLARE ERSTE SCHRITT</p>
+      <h2 style="margin: 0 0 20px; max-width: 700px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700; color: #F5F7FA">KI-Potenzialcheck für Ihr Unternehmen</h2>
+      <p style="margin: 0; max-width: 680px; font-size: 17px; line-height: 1.65; color: rgba(245,247,250,0.72); text-wrap: pretty">Im KI-Potenzialcheck betrachten wir ausgewählte Prozesse und prüfen, an welchen Stellen KI einen konkreten Nutzen bringen kann. Wir priorisieren geeignete Anwendungsfälle, benennen offene Fragen und entwickeln einen realistischen Einstieg.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin: 44px 0 44px; width: 100%">
+        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">DSGVO Konform<br>Sicherheit</div>
+        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">Individuelle Anwendungsfälle</div>
+        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">Rollen, IP Limitierung, Modell-, Skill- Management</div>
+        <div style="background: rgba(245,247,250,0.06); border: 1px solid rgba(245,247,250,0.12); border-radius: 18px; padding: 22px; font-size: 15.5px; line-height: 1.5; color: rgba(245,247,250,0.9)">Integration und Automatisierung&nbsp;</div>
+      </div>
+      <a href="#kontakt" style="display: inline-flex; align-items: center; background: #0B63E5; color: #FFFFFF; font-size: 17px; font-weight: 500; padding: 15px 30px; border-radius: 980px; transition: background 0.15s ease" style-hover="background: #2A79EC; color: #FFFFFF">Kontakt aufnehmen</a>
+    </div>
+  </section>
+
+  <!-- Praxisbeispiele -->
+  <section style="background: #FFFFFF">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center">
+        <h2 style="margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); letter-spacing: -0.03em; font-weight: 700">Wo KI im Arbeitsalltag helfen kann</h2>
+        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.72)">Der Nutzen entsteht meist nicht durch ein großes KI-Projekt. Oft beginnt er bei klar abgegrenzten Aufgaben, die regelmäßig Zeit kosten.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 52px">
+        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">Informationen aus längeren Dokumenten erschließen</div>
+        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">Entwürfe für E-Mails, Angebote und interne Texte vorbereiten</div>
+        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">vorhandenes Unternehmenswissen leichter auffindbar machen</div>
+        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">Rechercheergebnisse strukturiert zusammenfassen</div>
+        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">wiederkehrende Dokumentenabläufe vereinfachen</div>
+        <div style="background: #F5F7FA; border-radius: 18px; padding: 26px 28px; font-size: 15.5px; line-height: 1.55; color: rgba(29,29,31,0.8)">interne Vorlagen und Arbeitsanweisungen entwickeln</div>
+      </div>
+      <p style="margin: 28px auto 0; font-size: 14.5px; line-height: 1.6; color: rgba(29,29,31,0.55); max-width: 680px; text-align: center">Welche Anwendungen geeignet sind, hängt von den Aufgaben, den verwendeten Daten und den bestehenden Systemen ab.</p>
+    </div>
+  </section>
+
+  <!-- Grundlagen -->
+  <section style="background: #F5F7FA">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px">
+      <div style="max-width: 740px; margin: 0 auto; text-align: center">
+        <h2 style="margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.08; letter-spacing: -0.03em; font-weight: 700">Was ein dauerhafter KI-Einsatz voraussetzt</h2>
+        <p style="margin: 0; font-size: clamp(17px, 1.8vw, 19px); line-height: 1.6; color: rgba(29,29,31,0.72); text-wrap: pretty">Ob KI im Unternehmen dauerhaft trägt, entscheidet sich selten am Modell. Häufiger an den Grundlagen: verlässliche Daten, klare Regeln und Mitarbeitende, die sicher damit arbeiten.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 56px">
+        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
+          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Verlässliche Daten</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">KI-Anwendungen sind nur so gut wie die Daten, mit denen sie arbeiten. Wir prüfen, welche Informationen vorhanden sind, wo sie liegen und wie sie zugänglich gemacht werden können — ohne die Datenlandschaft komplett umzubauen.</p>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
+          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Klare Regeln</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Regulatorische Vorgaben wie der EU AI Act stellen je nach Einsatz Anforderungen an Transparenz, Dokumentation und Risikobewertung. Wir helfen, Zuständigkeiten und interne Regeln so aufzusetzen, dass die Nutzung nachvollziehbar bleibt. Eine Rechtsberatung ersetzen wir nicht.</p>
+        </div>
+        <div style="background: #FFFFFF; border-radius: 24px; padding: 38px 34px">
+          <h3 style="margin: 0 0 12px; font-size: 21px; font-weight: 600; letter-spacing: -0.015em">Befähigte Mitarbeitende</h3>
+          <p style="margin: 0; font-size: 15.5px; line-height: 1.6; color: rgba(29,29,31,0.7)">Der Nutzen entsteht erst, wenn Mitarbeitende die Werkzeuge im Alltag sicher einsetzen. Wir begleiten den Start mit Einführungen, kurzen Schulungen und praxisnahen Workshops zu den tatsächlichen Arbeitsabläufen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns -->
+  <section id="ueber-uns" style="background: #F5F7FA">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start">
+      <div>
+        <h2 style="margin: 0 0 22px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700">Beratung und Umsetzung aus einer Hand</h2>
+        <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir verbinden verständliche Beratung mit praktischer Umsetzung. Unser Ziel ist keine möglichst komplexe Lösung. Wir entwickeln einen Ansatz, der zu den Aufgaben, den vorhandenen Ressourcen und den Mitarbeitenden passt.</p>
+        <p style="margin: 0 0 16px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Wir arbeiten mit etablierten KI-Plattformen, Automatisierungswerkzeugen und moderner Webtechnologie. Welche Werkzeuge eingesetzt werden, entscheiden wir anhand der Anforderungen. Nicht anhand eines Herstellers.</p>
+        <p style="margin: 0 0 32px; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">Unser Angebot richtet sich an Unternehmen aus Limburg-Weilburg und Umgebung sowie an Kunden, die wir remote betreuen.</p>
+        <div style="border: 1.5px dashed rgba(11,99,229,0.35); border-radius: 18px; padding: 22px 24px; font-family: 'SF Mono', Menlo, 'Courier New', monospace; font-size: 13px; line-height: 1.6; color: rgba(29,29,31,0.5)">[Platzhalter: Abschnitt zu Personen, Rollen und Qualifikationen — wird später mit echten Angaben ergänzt]</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div data-parallax="0.07" style="will-change: transform">
+          <div role="img" aria-label="Persönliches Porträt" style="width: 100%; min-height: 460px; border-radius: 24px; background: linear-gradient(145deg, #EAF1FC 0%, #DCE7F8 100%); display: flex; align-items: center; justify-content: center; color: rgba(29,29,31,0.42); font-size: 14px; letter-spacing: 0.02em">Persönliches Porträt</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background: #F5F7FA">
+    <div style="max-width: 800px; margin: 0 auto; padding: 110px 22px">
+      <h2 style="margin: 0 0 40px; text-align: center; font-size: clamp(30px, 3.8vw, 44px); letter-spacing: -0.03em; font-weight: 700">Häufige Fragen</h2>
+      <div id="faq-list" style="display: flex; flex-direction: column; gap: 12px"></div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" style="background: #FFFFFF">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 110px 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start">
+      <div>
+        <h2 style="margin: 0 0 20px; font-size: clamp(30px, 3.8vw, 44px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700">Lassen Sie uns über Ihren konkreten Anwendungsfall sprechen.</h2>
+        <p style="margin: 0 0 0; font-size: 17px; line-height: 1.65; color: rgba(29,29,31,0.72); text-wrap: pretty">In einem ersten Gespräch klären wir, welche Aufgabe Sie lösen möchten und ob unser Angebot dazu passt. Sie benötigen dafür noch kein fertiges Konzept. Schreiben Sie uns eine E-Mail oder rufen Sie uns an — wir melden uns zeitnah zurück.</p>
+      </div>
+      <div style="background: #F5F7FA; border-radius: 24px; padding: 38px; display: flex; flex-direction: column; gap: 14px">
+        <a href="mailto:[E-Mail-Adresse]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
+          <span aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #EAF1FC; color: #0B63E5; display: flex; align-items: center; justify-content: center; font-size: 20px">✉</span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(29,29,31,0.55)">E-MAIL</span>
+            <span style="font-size: 17px; font-weight: 500; color: #0B63E5">[E-Mail-Adresse]</span>
+          </span>
+        </a>
+        <a href="tel:[Telefonnummer]" style="display: flex; align-items: center; gap: 18px; background: #FFFFFF; border-radius: 18px; padding: 22px 24px; transition: box-shadow 0.15s ease" style-hover="box-shadow: 0 6px 20px rgba(29,29,31,0.08)">
+          <span aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #EAF1FC; color: #0B63E5; display: flex; align-items: center; justify-content: center; font-size: 20px">☎</span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(29,29,31,0.55)">TELEFON</span>
+            <span style="font-size: 17px; font-weight: 500; color: #0B63E5">[Telefonnummer]</span>
+          </span>
+        </a>
+        <div style="display: flex; align-items: center; gap: 18px; padding: 8px 24px 0">
+          <span aria-hidden="true" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: #EAF1FC; color: #0B63E5; display: flex; align-items: center; justify-content: center; font-size: 20px">◎</span>
+          <span style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: rgba(29,29,31,0.55)">STANDORT</span>
+            <span style="font-size: 16px; color: rgba(29,29,31,0.8)">Limburg-Weilburg und remote in ganz Deutschland</span>
+          </span>
+        </div>
+        <p style="margin: 12px 0 0; font-size: 13px; line-height: 1.6; color: rgba(29,29,31,0.5)">Wir verwenden Ihre Angaben ausschließlich zur Bearbeitung Ihrer Anfrage. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="background: #F5F7FA; border-top: 1px solid rgba(29,29,31,0.08)">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 48px 22px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px">
+    <div style="display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 1.6; color: rgba(29,29,31,0.6)">
+      <p style="margin: 0 0 4px; font-size: 15px; font-weight: 600; color: #1D1D1F">[Unternehmensname]</p>
+      <p style="margin: 0">KI-Consulting &amp; digitale Lösungen</p>
+      <p style="margin: 10px 0 0">[Adresse]</p>
+      <a href="mailto:[E-Mail-Adresse]" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">[E-Mail-Adresse]</a>
+      <a href="tel:[Telefonnummer]" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">[Telefonnummer]</a>
+    </div>
+    <nav aria-label="Rechtliches und Kontakt" style="display: flex; flex-direction: column; gap: 10px; font-size: 13.5px">
+      <a href="impressum.html" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">Impressum</a>
+      <a href="datenschutz.html" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">Datenschutzerklärung</a>
+      <a href="[LinkedIn-Profil]" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">LinkedIn</a>
+      <a href="#kontakt" style="color: rgba(29,29,31,0.6)" style-hover="color: #0B63E5">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =====================================================================
+     KONFIGURATION — vor Veröffentlichung ausfüllen.
+     Leere Werte lassen den sichtbaren Platzhalter (z. B. [Unternehmensname])
+     unverändert stehen.
+  ===================================================================== */
+  var CONFIG = {
+    companyName: '',   // z. B. 'Muster KI GmbH'
+    email:       '',   // z. B. 'kontakt@muster-ki.de'
+    phone:       '',   // z. B. '+49 6431 000000'
+    address:     '',   // z. B. 'Musterstraße 1, 65549 Limburg'
+    linkedin:    ''    // z. B. 'https://www.linkedin.com/company/...'
+  };
+
+  var TOKENS = [
+    { token: '[Unternehmensname]', value: CONFIG.companyName },
+    { token: '[E-Mail-Adresse]',  value: CONFIG.email },
+    { token: '[Telefonnummer]',   value: CONFIG.phone },
+    { token: '[Adresse]',         value: CONFIG.address },
+    { token: '[LinkedIn-Profil]', value: CONFIG.linkedin }
+  ];
+
+  function applyConfig() {
+    TOKENS.forEach(function (t) {
+      if (!t.value) return;
+      // Textknoten ersetzen
+      var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+      var node;
+      while ((node = walker.nextNode())) {
+        if (node.nodeValue.indexOf(t.token) !== -1) {
+          node.nodeValue = node.nodeValue.split(t.token).join(t.value);
+        }
+      }
+      // href-Attribute (mailto:, tel:, LinkedIn) ersetzen
+      var links = document.querySelectorAll('a[href*="' + t.token + '"]');
+      Array.prototype.forEach.call(links, function (a) {
+        a.setAttribute('href', a.getAttribute('href').split(t.token).join(t.value));
+      });
+    });
+  }
+
+  /* ---- Hover-Stile (Ersatz für das DC-Attribut style-hover) ---- */
+  function initHover() {
+    var els = document.querySelectorAll('[style-hover]');
+    Array.prototype.forEach.call(els, function (el) {
+      var base = el.getAttribute('style') || '';
+      var hover = el.getAttribute('style-hover') || '';
+      el.addEventListener('mouseenter', function () {
+        el.setAttribute('style', base + '; ' + hover);
+      });
+      el.addEventListener('mouseleave', function () {
+        el.setAttribute('style', base);
+      });
+    });
+  }
+
+  /* ---- Mobiles Menü ---- */
+  function initMenu() {
+    var toggle = document.getElementById('nav-toggle');
+    var menu = document.getElementById('mobile-menu');
+    if (!toggle || !menu) return;
+    var mq = window.matchMedia('(max-width: 1080px)');
+
+    function setOpen(open) {
+      menu.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!menu.classList.contains('open'));
+    });
+    Array.prototype.forEach.call(menu.querySelectorAll('[data-close-menu]'), function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    // Beim Wechsel auf Desktop schließen
+    mq.addEventListener('change', function () { if (!mq.matches) setOpen(false); });
+  }
+
+  /* ---- FAQ-Akkordeon (Ersatz für sc-for / sc-if) ---- */
+  var FAQS = [
+    { q: 'Für welche Unternehmen eignet sich die Beratung?',
+      a: 'Unser Angebot richtet sich an kleine und mittlere Unternehmen, die KI strukturiert einführen möchten und keine eigene KI-Abteilung besitzen. Besonders geeignet sind wiederkehrende Büro-, Dokumenten- und Wissensprozesse.' },
+    { q: 'Arbeiten Sie mit einer bestimmten KI-Plattform?',
+      a: 'Wir sind nicht auf eine einzelne Plattform festgelegt. Wir vergleichen geeignete Lösungen anhand der Aufgaben, der Daten, der Nutzerzahl, der Kosten und der betrieblichen Anforderungen.' },
+    { q: 'Ist die Lösung automatisch DSGVO-konform?',
+      a: 'Nein. Ob eine Lösung datenschutzrechtlich zulässig ist, hängt vom konkreten Einsatz, den verarbeiteten Daten und den vereinbarten Bedingungen ab. Wir berücksichtigen Datenschutz und Informationssicherheit frühzeitig. Eine Rechtsberatung ersetzen wir nicht.' },
+    { q: 'Entwickeln Sie auch individuelle Software?',
+      a: 'Ja, wenn eine Standardplattform oder eine Low-Code-Lösung die Anforderungen nicht sinnvoll abdeckt. Wir begrenzen den Umfang klar und achten auf Tests, Dokumentation und eine wartbare Übergabe.' },
+    { q: 'Welche Rolle spielen der EU AI Act und andere Vorgaben?',
+      a: 'Je nach Einsatz stellen regulatorische Vorgaben wie der EU AI Act Anforderungen an Transparenz, Dokumentation und Risikobewertung. Wir berücksichtigen diese Punkte bei Auswahl und Einrichtung und schaffen eine nachvollziehbare Grundlage. Die rechtliche Bewertung übernimmt eine juristische Beratung.' },
+    { q: 'Übernehmen Sie auch den laufenden Betrieb?',
+      a: 'Je nach Vereinbarung unterstützen wir bei Nutzerverwaltung, Lizenzen, Konfiguration, Fragen aus dem Arbeitsalltag und der Weiterentwicklung bestehender Workflows.' }
+  ];
+
+  function initFaq() {
+    var list = document.getElementById('faq-list');
+    if (!list) return;
+    FAQS.forEach(function (f, i) {
+      var item = document.createElement('div');
+      item.style.cssText = 'background: #FFFFFF; border-radius: 18px; overflow: hidden';
+
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('aria-expanded', 'false');
+      btn.id = 'faq-btn-' + i;
+      btn.setAttribute('aria-controls', 'faq-panel-' + i);
+      btn.style.cssText = 'display: flex; justify-content: space-between; align-items: center; gap: 16px; width: 100%; background: none; border: none; text-align: left; padding: 22px 26px; font-size: 16.5px; font-weight: 600; letter-spacing: -0.01em; color: #1D1D1F; cursor: pointer';
+
+      var q = document.createElement('span');
+      q.textContent = f.q;
+      var icon = document.createElement('span');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = '+';
+      icon.style.cssText = 'color: #0B63E5; font-size: 21px; font-weight: 400; flex-shrink: 0';
+      btn.appendChild(q);
+      btn.appendChild(icon);
+
+      var panel = document.createElement('p');
+      panel.id = 'faq-panel-' + i;
+      panel.textContent = f.a;
+      panel.hidden = true;
+      panel.style.cssText = 'margin: 0; padding: 0 26px 24px; font-size: 15.5px; line-height: 1.65; color: rgba(29,29,31,0.7)';
+
+      btn.addEventListener('click', function () {
+        var open = panel.hidden;
+        // Andere schließen (Verhalten wie im Original: nur eines offen)
+        Array.prototype.forEach.call(list.querySelectorAll('[data-faq-panel]'), function (p) {
+          p.hidden = true;
+        });
+        Array.prototype.forEach.call(list.querySelectorAll('[data-faq-icon]'), function (ic) {
+          ic.textContent = '+';
+        });
+        Array.prototype.forEach.call(list.querySelectorAll('button[id^="faq-btn-"]'), function (b) {
+          b.setAttribute('aria-expanded', 'false');
+        });
+        if (open) {
+          panel.hidden = false;
+          icon.textContent = '−';
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      panel.setAttribute('data-faq-panel', '');
+      icon.setAttribute('data-faq-icon', '');
+
+      item.appendChild(btn);
+      item.appendChild(panel);
+      list.appendChild(item);
+    });
+  }
+
+  /* ---- Scroll-Reveal ---- */
+  function initScrollEffects() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var ease = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.style.opacity = '1';
+          en.target.style.transform = 'translateY(0)';
+          observer.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    function prep(el, delay) {
+      if (!el || el.dataset.fx) return;
+      el.dataset.fx = '1';
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.8s ' + ease + ', transform 0.8s ' + ease;
+      el.style.transitionDelay = delay + 'ms';
+      observer.observe(el);
+    }
+
+    function collect() {
+      var hero = document.getElementById('start');
+      if (hero) {
+        var inner = hero.querySelector(':scope > div:not(:empty)');
+        if (inner && !inner.dataset.fxHero) {
+          inner.dataset.fxHero = '1';
+          [].slice.call(inner.children).forEach(function (c, i) {
+            c.style.opacity = '0';
+            c.style.transform = 'translateY(22px)';
+            c.style.transition = 'opacity 0.9s ' + ease + ', transform 0.9s ' + ease;
+            c.style.transitionDelay = (120 + i * 110) + 'ms';
+            requestAnimationFrame(function () {
+              requestAnimationFrame(function () {
+                c.style.opacity = '1';
+                c.style.transform = 'translateY(0)';
+              });
+            });
+          });
+        }
+      }
+      document.querySelectorAll('main section').forEach(function (sec) {
+        if (sec.id === 'start') return;
+        sec.querySelectorAll('div, ol, ul').forEach(function (el) {
+          if (el.style.display === 'grid') {
+            [].slice.call(el.children).forEach(function (c, i) { prep(c, Math.min(i, 8) * 90); });
+          }
+        });
+        sec.querySelectorAll('h2').forEach(function (el) {
+          if (el.closest('[data-fx]')) return;
+          var p = el.parentElement;
+          var target = (p && p !== sec && p.children.length <= 3 && !p.querySelector('[style*="grid"]')) ? p : el;
+          prep(target, 0);
+        });
+      });
+    }
+
+    collect();
+    setTimeout(collect, 800);
+  }
+
+  /* ---- Parallax ---- */
+  function initParallax() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var heroSec = document.getElementById('start');
+    var heroCanvas = heroSec ? heroSec.querySelector('canvas') : null;
+    var heroInner = heroSec ? heroSec.querySelector(':scope > div:not(:empty)') : null;
+    if (heroInner) heroInner.style.willChange = 'transform, opacity';
+    if (heroCanvas) heroCanvas.style.willChange = 'transform';
+
+    var pxEls = [].slice.call(document.querySelectorAll('[data-parallax]'));
+    var ticking = false;
+
+    function apply() {
+      ticking = false;
+      var sy = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var vh = window.innerHeight || 1;
+
+      if (heroSec) {
+        var hh = heroSec.offsetHeight || vh;
+        if (sy < hh) {
+          if (heroCanvas) heroCanvas.style.transform = 'translate3d(0,' + (sy * 0.28).toFixed(1) + 'px,0)';
+          if (heroInner) {
+            heroInner.style.transform = 'translate3d(0,' + (sy * 0.14).toFixed(1) + 'px,0)';
+            heroInner.style.opacity = Math.max(0, 1 - (sy / hh) * 1.25).toFixed(3);
+          }
+        }
+      }
+
+      pxEls.forEach(function (el) {
+        var speed = parseFloat(el.dataset.parallax) || 0;
+        var r = el.getBoundingClientRect();
+        var centre = r.top + r.height / 2 - vh / 2;
+        el.style.transform = 'translate3d(0,' + (-centre * speed).toFixed(1) + 'px,0)';
+      });
+    }
+
+    function onScroll() {
+      if (!ticking) { ticking = true; requestAnimationFrame(apply); }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    apply();
+  }
+
+  /* ---- Hero-Canvas: neuronales "Gehirn" ---- */
+  function startHeroAnimation() {
+    var canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = 0, h = 0, t = 0;
+    var raf = null;
+
+    function resize() {
+      var r = canvas.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    var scan = { x: 0.32, y: 0.58, tx: 0.32, ty: 0.58, hover: false };
+
+    var N = 240;
+    var nodes3 = [];
+    while (nodes3.length < N) {
+      var x = Math.random() * 2 - 1, y = Math.random() * 2 - 1, z = Math.random() * 2 - 1;
+      var d = Math.hypot(x, y, z);
+      if (d === 0 || d > 1) continue;
+      var shell = Math.pow(Math.random(), 0.3);
+      var px = x / d * shell * 1.35;
+      var py = y / d * shell * 0.92;
+      var pz = z / d * shell * 1.05;
+      px += (px >= 0 ? 1 : -1) * 0.07;
+      if (py > 0) py *= 0.7;
+      if (pz < 0) { px *= 0.92; py *= 0.95; }
+      nodes3.push({ x: px, y: py, z: pz, act: 0 });
+    }
+    var edges = [];
+    var adj = [];
+    for (var a0 = 0; a0 < N; a0++) adj.push([]);
+    for (var i0 = 0; i0 < N; i0++) {
+      for (var j0 = i0 + 1; j0 < N; j0++) {
+        if (adj[i0].length > 5) break;
+        var na = nodes3[i0], nb = nodes3[j0];
+        var dd = Math.hypot(na.x - nb.x, na.y - nb.y, na.z - nb.z);
+        if (dd < 0.34 && adj[j0].length < 6) {
+          adj[i0].push(edges.length); adj[j0].push(edges.length);
+          edges.push([i0, j0]);
+        }
+      }
+    }
+    for (var i1 = 0; i1 < N; i1++) {
+      if (adj[i1].length) continue;
+      var best0 = 0, bd0 = 1e9;
+      for (var j1 = 0; j1 < N; j1++) {
+        if (j1 === i1) continue;
+        var a1 = nodes3[i1], b1 = nodes3[j1];
+        var d1 = Math.hypot(a1.x - b1.x, a1.y - b1.y, a1.z - b1.z);
+        if (d1 < bd0) { bd0 = d1; best0 = j1; }
+      }
+      adj[i1].push(edges.length); adj[best0].push(edges.length);
+      edges.push([i1, best0]);
+    }
+    var pulses = [];
+    for (var p0 = 0; p0 < 26; p0++) {
+      pulses.push({
+        e: (Math.random() * edges.length) | 0,
+        p: Math.random(),
+        s: 0.004 + Math.random() * 0.009,
+        dir: Math.random() < 0.5 ? -1 : 1
+      });
+    }
+
+    var labels = [
+      'Verbinde Microsoft 365',
+      'Verbinde Google Workspace',
+      'Dokumente erschließen',
+      'Entwürfe vorbereiten',
+      'Wissen auffindbar machen',
+      'Recherche zusammenfassen',
+      'Abläufe vereinfachen',
+      'Vorlagen entwickeln',
+      'Anwendungsfälle priorisieren',
+      'Rollen und Zugriffe klären',
+      'Daten strukturieren',
+      'Pilotbetrieb vorbereiten'
+    ];
+    var anno = { node: -1, t0: 0, li: -1 };
+
+    var rot = { off: 0, pitch: -0.12 };
+    var proj = new Array(N);
+    function project() {
+      var cx = w * 0.5, cy = h * 0.52, R = Math.min(w, h) * 0.36;
+      var offT = scan.hover ? (scan.tx - 0.5) * 1.2 : 0;
+      var pitchT = -0.12 + (scan.hover ? (scan.ty - 0.5) * 0.6 : 0);
+      rot.off += (offT - rot.off) * 0.04;
+      rot.pitch += (pitchT - rot.pitch) * 0.04;
+      var yaw = t * 0.06 + rot.off;
+      var cosY = Math.cos(yaw), sinY = Math.sin(yaw);
+      var cosX = Math.cos(rot.pitch), sinX = Math.sin(rot.pitch);
+      for (var i = 0; i < N; i++) {
+        var n = nodes3[i];
+        var x1 = n.x * cosY + n.z * sinY;
+        var z1 = -n.x * sinY + n.z * cosY;
+        var y1 = n.y * cosX - z1 * sinX;
+        z1 = n.y * sinX + z1 * cosX;
+        var f = 2.6 / (2.6 + z1);
+        proj[i] = { x: cx + x1 * R * f, y: cy + y1 * R * f, f: f };
+      }
+    }
+
+    function drawNet(scanned) {
+      for (var e = 0; e < edges.length; e++) {
+        var a = proj[edges[e][0]], b = proj[edges[e][1]];
+        var depth = (a.f + b.f) / 2;
+        if (scanned) {
+          ctx.strokeStyle = 'rgba(29,29,31,0.4)';
+          ctx.lineWidth = 0.8;
+        } else {
+          var al = Math.max(0, depth - 0.78) * 0.55 + 0.04;
+          ctx.strokeStyle = 'rgba(11,99,229,' + al.toFixed(3) + ')';
+          ctx.lineWidth = 1;
+        }
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+      }
+      for (var i = 0; i < N; i++) {
+        var q = proj[i], n = nodes3[i];
+        var r = Math.max(0.6, (scanned ? 1.5 : 1.2) * q.f + (scanned ? 0 : n.act * 2.4));
+        ctx.beginPath(); ctx.arc(q.x, q.y, r, 0, Math.PI * 2);
+        if (scanned) {
+          ctx.fillStyle = 'rgba(29,29,31,0.75)';
+        } else {
+          var base = 0.25 + Math.max(0, q.f - 0.8) * 0.9;
+          ctx.fillStyle = n.act > 0.05
+            ? 'rgba(10,132,255,' + Math.min(1, base + n.act).toFixed(3) + ')'
+            : 'rgba(29,60,120,' + Math.min(1, base).toFixed(3) + ')';
+        }
+        ctx.fill();
+        if (!scanned && n.act > 0.05) {
+          ctx.beginPath(); ctx.arc(q.x, q.y, r + 6 * n.act, 0, Math.PI * 2);
+          ctx.strokeStyle = 'rgba(10,132,255,' + (0.5 * n.act).toFixed(3) + ')';
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+        if (!scanned) n.act *= 0.97;
+      }
+      if (!scanned && !reduced) {
+        for (var pi = 0; pi < pulses.length; pi++) {
+          var pl = pulses[pi];
+          pl.p += pl.s * pl.dir;
+          if (pl.p >= 1 || pl.p <= 0) {
+            var nodeIdx = edges[pl.e][pl.p >= 1 ? 1 : 0];
+            nodes3[nodeIdx].act = 1;
+            var opts = adj[nodeIdx];
+            pl.e = opts[(Math.random() * opts.length) | 0];
+            pl.dir = edges[pl.e][0] === nodeIdx ? 1 : -1;
+            pl.p = pl.dir === 1 ? 0 : 1;
+            pl.s = 0.004 + Math.random() * 0.009;
+          }
+          var ea = proj[edges[pl.e][0]], eb = proj[edges[pl.e][1]];
+          var x = ea.x + (eb.x - ea.x) * pl.p, y = ea.y + (eb.y - ea.y) * pl.p;
+          var g = ctx.createRadialGradient(x, y, 0, x, y, 7);
+          g.addColorStop(0, 'rgba(10,132,255,0.9)');
+          g.addColorStop(1, 'rgba(10,132,255,0)');
+          ctx.fillStyle = g;
+          ctx.beginPath(); ctx.arc(x, y, 7, 0, Math.PI * 2); ctx.fill();
+          ctx.fillStyle = 'rgba(255,255,255,0.95)';
+          ctx.beginPath(); ctx.arc(x, y, 1.6, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      project();
+      drawNet(false);
+      if (scan.hover) {
+        var best = -1, bd = 1e9;
+        var mx = scan.tx * w, my = scan.ty * h;
+        for (var i = 0; i < N; i++) {
+          var q = proj[i];
+          if (q.f < 0.95) continue;
+          var dq = (q.x - mx) * (q.x - mx) + (q.y - my) * (q.y - my);
+          if (dq < bd) { bd = dq; best = i; }
+        }
+        if (best >= 0 && best !== anno.node) {
+          anno.node = best; anno.t0 = t; anno.li = (anno.li + 1) % labels.length;
+        }
+      } else if (anno.node < 0 || t - anno.t0 > 5.2) {
+        for (var k = 0; k < 40; k++) {
+          var ri = (Math.random() * N) | 0;
+          if (proj[ri].f > 1.02) {
+            anno.node = ri; anno.t0 = t; anno.li = (anno.li + 1) % labels.length;
+            break;
+          }
+        }
+      }
+      if (anno.node >= 0) {
+        var qn = proj[anno.node];
+        var age = t - anno.t0;
+        var fade = scan.hover ? 1 : Math.min(1, Math.max(0, (5.2 - age) / 0.5));
+        var alpha = fade * Math.min(1, age / 0.25 + (reduced ? 1 : 0));
+        var rs = 14, bl = 6;
+        ctx.strokeStyle = 'rgba(10,132,255,' + alpha.toFixed(3) + ')';
+        ctx.lineWidth = 2;
+        ctx.lineCap = 'square';
+        var corner = function (cx, cy, dx, dy) {
+          ctx.beginPath();
+          ctx.moveTo(cx + dx * bl, cy);
+          ctx.lineTo(cx, cy);
+          ctx.lineTo(cx, cy + dy * bl);
+          ctx.stroke();
+        };
+        corner(qn.x - rs, qn.y - rs, 1, 1);
+        corner(qn.x + rs, qn.y - rs, -1, 1);
+        corner(qn.x - rs, qn.y + rs, 1, -1);
+        corner(qn.x + rs, qn.y + rs, -1, -1);
+        var text = labels[anno.li];
+        var chars = reduced ? text.length : Math.min(text.length, Math.floor(age / 0.045));
+        var shown = text.slice(0, chars);
+        ctx.font = '500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
+        var tw = ctx.measureText(text).width;
+        var side = qn.x < w / 2 ? -1 : 1;
+        var bw = tw + 36, bh = 30;
+        var bx = side < 0 ? qn.x - 80 - bw : qn.x + 80;
+        var by = qn.y - 52;
+        bx = Math.max(10, Math.min(w - bw - 10, bx));
+        by = Math.max(10, Math.min(h - bh - 10, by));
+        var axx = side < 0 ? bx + bw : bx;
+        var ayy = by + bh / 2;
+        var ang = Math.atan2(qn.y - ayy, qn.x - axx);
+        var bxX = qn.x - Math.cos(ang) * 16, bxY = qn.y - Math.sin(ang) * 16;
+        ctx.strokeStyle = 'rgba(10,132,255,' + (0.8 * alpha).toFixed(3) + ')';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(axx, ayy); ctx.lineTo(bxX, bxY); ctx.stroke();
+        ctx.fillStyle = 'rgba(10,132,255,' + alpha.toFixed(3) + ')';
+        ctx.beginPath();
+        ctx.moveTo(qn.x - Math.cos(ang) * 5, qn.y - Math.sin(ang) * 5);
+        ctx.lineTo(bxX - Math.sin(ang) * 4.5, bxY + Math.cos(ang) * 4.5);
+        ctx.lineTo(bxX + Math.sin(ang) * 4.5, bxY - Math.cos(ang) * 4.5);
+        ctx.closePath();
+        ctx.fill();
+        ctx.beginPath();
+        var rr = 8;
+        ctx.moveTo(bx + rr, by);
+        ctx.arcTo(bx + bw, by, bx + bw, by + bh, rr);
+        ctx.arcTo(bx + bw, by + bh, bx, by + bh, rr);
+        ctx.arcTo(bx, by + bh, bx, by, rr);
+        ctx.arcTo(bx, by, bx + bw, by, rr);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(255,255,255,' + (0.94 * alpha).toFixed(3) + ')';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(10,132,255,' + (0.75 * alpha).toFixed(3) + ')';
+        ctx.lineWidth = 1.25;
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(10,132,255,' + alpha.toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(bx + 14, by + bh / 2, 3, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = 'rgba(29,29,31,' + alpha.toFixed(3) + ')';
+        ctx.fillText(shown + (chars < text.length ? '▏' : ''), bx + 24, by + bh / 2 + 4.5);
+      }
+      var rg = ctx.createRadialGradient(w / 2, h * 0.34, 0, w / 2, h * 0.34, Math.min(w, h) * 0.52);
+      rg.addColorStop(0, 'rgba(255,255,255,0.88)');
+      rg.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = rg;
+      ctx.fillRect(0, 0, w, h);
+      if (!reduced) { t += 0.016; raf = requestAnimationFrame(draw); }
+    }
+
+    var heroCard = canvas.parentElement;
+    heroCard.addEventListener('mousemove', function (e) {
+      var r = canvas.getBoundingClientRect();
+      scan.hover = true;
+      scan.tx = (e.clientX - r.left) / Math.max(1, r.width);
+      scan.ty = (e.clientY - r.top) / Math.max(1, r.height);
+    });
+    heroCard.addEventListener('mouseleave', function () { scan.hover = false; });
+    window.addEventListener('resize', function () { resize(); if (reduced) draw(); });
+
+    resize();
+    if (reduced) { draw(); return; }
+    raf = requestAnimationFrame(draw);
+  }
+
+  function init() {
+    applyConfig();
+    initHover();
+    initMenu();
+    initFaq();
+    initScrollEffects();
+    initParallax();
+    startHeroAnimation();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>
